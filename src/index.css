@@ -1,0 +1,22 @@
+/* index.css */
+
+/* 기본적인 브라우저 스타일을 리셋 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Pretendard', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
