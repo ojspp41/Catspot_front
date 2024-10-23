@@ -46,4 +46,8 @@
     position: relative;
     z-index: 1;  /* 텍스트가 삼각형 위에 보이도록 설정 */
   }
+  .room-box-max {
+    width: 270px;
+    height: 80px;
+  }
   

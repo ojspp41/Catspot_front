@@ -45,7 +45,7 @@
   .icon {
     width: 40px; /* 아이콘 크기 조절 */
     height: 40px;
-    animation: bounce 1.2s ease-in-out infinite; /* 애니메이션을 아이콘에만 적용 */
+    animation: bounce 1.3s ease-in-out infinite; /* 애니메이션을 아이콘에만 적용 */
   }
   
   @keyframes bounce {
@@ -53,7 +53,7 @@
       transform: translateY(0);
     }
     40% {
-      transform: translateY(-30px); /* 위로 튀기 */
+      transform: translateY(-50px); /* 위로 튀기 */
     }
     60% {
       transform: translateY(-5px);  /* 살짝 덜 튀기 */

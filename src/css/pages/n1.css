@@ -77,6 +77,24 @@
   .marker-red {
     background-color: #D0121C;  /* 빨간색 */
   }
+  .marker-maria {
+    display: flex;
+    flex-direction: column;  /* 세로 방향으로 배치 */
+    justify-content: center;
+    align-items: center;
+    width: 76px;
+    height: 19px;
+    background-color: #DFDFDF;  /* 배경색 */
+    font-family: 'ADLaM Display', sans-serif;  /* 폰트 */
+    font-size: 14px;
+    font-weight: 500;  /* regular */
+    /* 한글자씩 간격 */
+    color: black;
+  }
+  
+  .marker-maria span {
+    display: block;
+  }
   
   /* 각 위치에 따른 절대 위치 설정 */
   .marker-top-left {
@@ -149,4 +167,9 @@
     color: black;
     font-size: 20px;
     font-weight: bold;
+  }
+  .marker-top-right-maria {
+    top: 50px;
+    right: -38px;
+    transform: rotate(90deg)
   }

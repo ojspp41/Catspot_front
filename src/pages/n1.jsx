@@ -21,7 +21,7 @@ const N1= () => {
             <div className="room-column room-column-left">
                 <RoomBox text="N119" />
                 <RoomBox text="N113" />
-                <div style={{ margin: '30px' }}></div>
+                <div style={{ marginBottom: '30px' }}></div>
 
                 <RoomBox text="N102" />
                 <RoomBox text="N101" />
@@ -38,7 +38,7 @@ const N1= () => {
                 <RoomBox text="N114" />
                 <RoomBox text="N112" />
                 <RoomBox text="N104" className="room-box-highlight" />
-                <div style={{ margin: '10px' }}></div>
+                <div style={{ marginBottom: '10px' }}></div>
                 <RoomBox text="N110"  />
                 <RoomBox text="N103" />
             </div>
@@ -50,7 +50,7 @@ const N1= () => {
             <div className="label label-stairs" style={{ marginLeft: '20px' }}></div>
             <span className="label-text">계단</span>
         </div>
-        <div style={{ margin: '30px' }}></div>
+        <div style={{ marginBottom: '30px' }}></div>
     </>
   );
 };
