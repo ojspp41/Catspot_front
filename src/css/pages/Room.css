@@ -1,3 +1,17 @@
-.body{
-  
+.room-centered-box {
+    margin-top: 140px;
+    width: 80%;
+    height: 141px;
+    background-color: rgba(185, 191, 227, 0.32); /* 배경색 #b9bfe3, 불투명도 32% */
+    display: flex;
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+    margin-left: auto;
+    margin-right: auto;
 }
+  
+  .room-centered-box-text {
+    font-size: 16px; /* 글자 크기는 필요에 맞게 설정 */
+    color: #182981; /* 텍스트 색상 예시 */
+  }
+  
