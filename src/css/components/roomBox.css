@@ -1,0 +1,49 @@
+.room-box {
+    position: relative;
+    width: 82px;
+    height: 70px;
+    background-color: #B9BFE3;  /* 기본 배경색 */
+    border-radius: 15px;  /* 둥근 모서리 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    margin-top: 20px;
+  }
+  
+  .room-box-highlight {
+    background-color: #FFD664;  /* 강조된 RoomBox 배경 색상 */
+  }
+  
+  .room-box::before, .room-box::after {
+    content: '';
+    position: absolute;
+    top: -12px;  /* 삼각형 위치 설정 */
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 15px 15px 15px;
+    border-color: transparent transparent #B9BFE3 transparent;  /* 기본 삼각형 색상 */
+    border-radius: 15px 15px 0 0; /* 삼각형을 둥글게 */
+  }
+  
+  .room-box::before {
+    left: 10px;  /* 왼쪽 삼각형 */
+  }
+  
+  .room-box::after {
+    right: 10px;  /* 오른쪽 삼각형 */
+  }
+  
+  /* 강조 상태일 때 삼각형도 노란색으로 변경 */
+  .room-box-highlight::before, .room-box-highlight::after {
+    border-color: transparent transparent #FFD664 transparent;  /* 강조된 색상 */
+  }
+  
+  .room-box-content {
+    position: relative;
+    z-index: 1;  /* 텍스트가 삼각형 위에 보이도록 설정 */
+  }
+  
