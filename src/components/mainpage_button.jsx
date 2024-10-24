@@ -9,7 +9,7 @@ export default function MainButton() {
   };
 
   const ClassroomButton = () => {
-    navigate("/");
+    navigate("/room");
   };
 
   return (
