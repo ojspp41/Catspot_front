@@ -1,8 +1,11 @@
 .library-site {
+  background-color: #fff;
+
   p {
     font-size: 22px;
     text-align: center;
-    margin-block-start: 35px;
+    margin-top: 45px;
+    margin-bottom: 55px;
   }
 
   figure {
@@ -11,6 +14,5 @@
     text-align: center;
     align-content: center;
     border: 1px solid black;
-    margin-block-end: 30px;
   }
 }

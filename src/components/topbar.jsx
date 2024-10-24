@@ -9,12 +9,12 @@ export const Topbar = ({ title }) => {
   };
 
   return (
-    <div className="navbar">
-      <div className="navbar-left-section">
+    <div className="topbar">
+      <div className="topbar-left-section">
         <img src="/assets/back.svg" alt="logo" className="navbar-logo" onClick={handleBackClick} />
       </div>
-      <div className="navbar-title-section">
-        <h1 className="navbar-title">{title}</h1>
+      <div className="topbar-title-section">
+        <h1 className="topbar-title">{title}</h1>
       </div>
     </div>
   );

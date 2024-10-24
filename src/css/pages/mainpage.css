@@ -2,6 +2,7 @@
   background-color: #fff;
   color: #182981;
   padding-block-start: 120px;
+  flex: 1;
 
   h1 {
     font-size: 48px;
@@ -12,7 +13,7 @@
   p {
     font-size: 15px;
     text-align: right;
-    margin-top: 20px;
-    margin-right: 75px;
+    text-align: center;
+    margin-left: 70px;
   }
 }

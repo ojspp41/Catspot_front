@@ -1,12 +1,14 @@
-.navbar {
-  inline-size: 450px;
+.topbar {
   position: sticky;
   inset-block-start: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: #fff;
+  margin-top: 30px;
+  margin-bottom: 10px;
 
-  .navbar-logo {
+  .topbar-logo {
     width: 13px;
     height: 20px;
     cursor: pointer;
@@ -14,7 +16,7 @@
     border: none;
   }
 
-  .navbar-title {
+  .topbar-title {
     color: #182981;
     font-size: 25px;
     font-weight: bold;
@@ -23,19 +25,19 @@
     text-decoration: none;
   }
 
-  .navbar-left-section {
+  .topbar-left-section {
     margin-left: 20px;
     display: flex;
     align-items: center;
   }
 
-  .navbar-title-section {
+  .topbar-title-section {
     flex: 1;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 40px;
     height: 100%;
+    margin-inline-end: 50px;
   }
 }
