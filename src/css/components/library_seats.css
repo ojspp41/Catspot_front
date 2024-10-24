@@ -1,0 +1,53 @@
+img {
+  inline-size: 105px;
+  block-size: 125px;
+  border: 1px solid black;
+  border-radius: 10px;
+  block-size: 125px;
+}
+
+.library_seats_head {
+  inline-size: 250px;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding-inline: 10px;
+  block-size: 125px;
+
+  .head {
+    text-align: center;
+    font-size: 22px;
+    margin-block: 12px;
+  }
+
+  .detail {
+    font-size: 10px;
+    font-weight: bold;
+    color: #182981;
+  }
+
+  .library_seats_detail {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+  }
+}
+
+.library_seats {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+}
+
+.seats_data {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  p {
+    font-weight: bold;
+  }
+}

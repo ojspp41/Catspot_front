@@ -1,0 +1,18 @@
+.mainpage {
+  background-color: #fff;
+  color: #182981;
+  padding-block-start: 120px;
+
+  h1 {
+    font-size: 48px;
+    text-align: center;
+    font-family: "ADLaM Display";
+  }
+
+  p {
+    font-size: 15px;
+    text-align: right;
+    margin-top: 20px;
+    margin-right: 75px;
+  }
+}

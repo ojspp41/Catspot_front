@@ -1,0 +1,41 @@
+.navbar {
+  inline-size: 450px;
+  position: sticky;
+  inset-block-start: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .navbar-logo {
+    width: 13px;
+    height: 20px;
+    cursor: pointer;
+    vertical-align: middle;
+    border: none;
+  }
+
+  .navbar-title {
+    color: #182981;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 0;
+    line-height: normal;
+    text-decoration: none;
+  }
+
+  .navbar-left-section {
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-title-section {
+    flex: 1;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 40px;
+    height: 100%;
+  }
+}
