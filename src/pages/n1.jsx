@@ -5,7 +5,7 @@ import { Navbar } from '../components/Navbar';
 import "../css/pages/n1.css";
 import RoomBox from '../components/RoomBox';
 import ScheduleModal from '../components/ScheduleModal';
-
+// import axiosInstance from '../axiosConfig';
 const mockScheduleData = {
   N114: {
     room: "N114",
@@ -79,7 +79,20 @@ const N1 = () => {
   const handleRoomClick = (room) => {
     setSelectedRoom(mockScheduleData[room]);
   };
+  // const handleRoomClick = async (room) => {
+  //   setLoading(true);  // 요청 시작 시 로딩 상태로 설정
+  //   setError(null);    // 이전 에러 상태 초기화
 
+  //   try {
+  //     // 해당 room의 스케줄을 서버로부터 GET 요청
+  //     const response = await axiosInstance.get(`/api/${room}`);
+  //     setSelectedRoom(response.data); // 응답 받은 데이터로 상태 업데이트
+  //   } catch (err) {
+  //     setError("스케줄을 불러오는 중 오류가 발생했습니다."); // 에러 발생 시 상태 업데이트
+  //   } finally {
+  //     setLoading(false); // 요청 완료 후 로딩 상태 해제
+  //   }
+  // };통신
   const closeModal = () => {
     setSelectedRoom(null);
   };

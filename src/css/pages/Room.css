@@ -13,12 +13,13 @@
     border-radius: 15px; /* Increased border radius for smoother corners */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for a subtle 3D effect */
     border: 1px solid rgba(24, 41, 129, 0.2); /* Light blue border */
-    transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+    transition: all 0.6s ease-in-out; /* Smooth transition for hover effects with longer duration */
 }
-  
+
 .room-centered-box:hover {
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); /* Slightly larger shadow on hover */
     transform: translateY(-5px); /* Lifts the box slightly when hovered */
+    transition: all 0.6s ease-in-out; /* Smooth transition for hover effects with longer duration */
 }
 
 .room-category {
@@ -36,6 +37,7 @@
     font-family: 'Abel', sans-serif; /* Abel font for faded text */
     font-weight: 400;
     text-align: center;
+    transition: opacity 0.6s ease-in-out; /* Smooth fade transition */
 }
 
 .room-centered-text {
@@ -44,17 +46,20 @@
     font-family: 'Abel', sans-serif; /* Abel font for centered text */
     font-weight: bold; /* Make the center text bold */
     text-align: center;
+    transition: transform 0.6s ease-in-out; /* Smooth scaling effect on hover */
 }
-  .room-category p {
-    transition: transform 0.5s ease, opacity 0.5s ease;
-  }
-  .room-button-container {
+
+.room-category p {
+    transition: transform 0.6s ease, opacity 0.6s ease; /* Text transition on hover */
+}
+
+.room-button-container {
     display: flex;
     justify-content: center;
     margin-top: 91px;
-  }
-  
-  .room-button {
+}
+
+.room-button {
     width: 80%;
     height: 60px;
     background-color: #182981;
@@ -65,5 +70,10 @@
     border-radius: 15px;
     cursor: pointer;
     text-align: center;
-  }
-  
+    transition: background-color 0.3s ease, transform 0.6s ease; /* Smooth transition for button hover */
+}
+
+.room-button:hover {
+    transform: translateY(-3px); /* Slight lift effect on hover */
+    background-color: #13235b; /* Darken the button color on hover */
+}
