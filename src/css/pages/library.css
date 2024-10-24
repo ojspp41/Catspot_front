@@ -10,6 +10,7 @@
   }
 
   .library_rooms {
+    margin-top: 130px;
     display: grid;
     gap: 12px;
     justify-content: center;
