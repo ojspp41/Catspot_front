@@ -7,11 +7,11 @@ img {
 }
 
 .library_seats_head {
-  inline-size: 250px;
+  inline-size: 220px;
+  block-size: 125px;
   border: 1px solid black;
   border-radius: 10px;
   padding-inline: 10px;
-  block-size: 125px;
 
   .head {
     text-align: center;

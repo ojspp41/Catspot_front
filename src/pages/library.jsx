@@ -41,7 +41,7 @@ export default function Library() {
 
   return (
     <div className="main-library">
-      <Topbar title="도서관 잔여 좌석" />
+      <Topbar title="도서관 잔여 좌석" className="header" />
       <div className="library_rooms">
         <Link to="/Library_site1">
           <LibrarySeats placeIdx="1" Seats={sampleSeats} />

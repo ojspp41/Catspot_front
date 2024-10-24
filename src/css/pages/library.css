@@ -1,12 +1,20 @@
 .main-library {
+  background-color: #fff;
   display: grid;
   gap: 28px;
+  height: 700px;
+  inline-size: 390px;
+
+  header {
+    margin-top: 22px;
+  }
 
   .library_rooms {
     display: grid;
     gap: 12px;
+    justify-content: center;
     overflow-y: scroll;
-    height: 800px;
+    inline-size: 390px;
   }
 
   .library_rooms::-webkit-scrollbar {
@@ -21,5 +29,7 @@
 
   a {
     display: inline-block;
+    inline-size: 325px;
+    block-size: 125px;
   }
 }
