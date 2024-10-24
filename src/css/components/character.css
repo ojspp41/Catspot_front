@@ -1,0 +1,62 @@
+.character {
+  .cat {
+    width: 310px;
+    height: 385px;
+  }
+
+  .cat-wrapper {
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+    position: relative;
+  }
+
+  .eyes {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -55%);
+  }
+}
+
+@keyframes eyesMove {
+  0% {
+    transform: translate(-50%, -55%);
+  }
+
+  12.5% {
+    transform: translate(-55%, -55%);
+  }
+
+  25% {
+    transform: translate(-45%, -55%);
+  }
+
+  37.5% {
+    transform: translate(-55%, -55%);
+  }
+
+  50% {
+    transform: translate(-45%, -55%);
+  }
+
+  62.5% {
+    transform: translate(-45%, -60%);
+  }
+
+  75% {
+    transform: translate(-45%, -60%);
+  }
+
+  87.5% {
+    transform: translate(-50%, -55%);
+  }
+
+  100% {
+    transform: translate(-50%, -55%);
+  }
+}
+
+.eyes {
+  animation: eyesMove 5s infinite;
+}
