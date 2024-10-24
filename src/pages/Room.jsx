@@ -68,21 +68,21 @@ const Room = () => {
       setCurrentIndex((prevIndex) => (prevIndex - 1 + categories.length) % categories.length);
     }
   };
-//   const handleGoClick = async () => {
-//     setCurrentBuilding(currentCategory);  // 현재 건물 상태 업데이트
+  // const handleGoClick = async () => {
+  //   setCurrentBuilding(currentCategory);  // 현재 건물 상태 업데이트
 
-//     try {
-//       // POST 요청에서 currentFloorState의 값을 사용하여 전송
-//       const response = await axiosInstance.post('/api/submit', {
-//         building: currentCategory,
-//         floor: currentFloor,  // currentFloorState에서 가져온 값 (Recoil 상태값)
-//       });
+  //   try {
+  //     // POST 요청에서 currentFloorState의 값을 사용하여 전송
+  //     const response = await axiosInstance.post('/api/submit', {
+  //       building: currentCategory,
+  //       floor: currentFloor,  // currentFloorState에서 가져온 값 (Recoil 상태값)
+  //     });
 
-//       console.log('응답 받음:', response.data);
-//     } catch (error) {
-//       console.error('POST 요청 실패:', error);
-//     }
-//   };
+  //     console.log('응답 받음:', response.data);
+  //   } catch (error) {
+  //     console.error('POST 요청 실패:', error);
+  //   }
+  // };
     const handleGoClick = () => {
         setCurrentBuilding(currentCategory);  // 현재 건물 상태 업데이트
         const buildingCode = getBuildingCode(currentCategory);

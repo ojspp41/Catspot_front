@@ -15,9 +15,9 @@ export default function LibrarySeats({ placeIdx, Seats }) {
           <p className="detail">총 좌석수</p>
         </div>
         <div className="seats_data">
-          <p>{restSeats}</p>
-          <p>{useSeats}</p>
-          <p>{allSeats}</p>
+          <p>150</p>
+          <p>150</p>
+          <p>150</p>
         </div>
       </div>
     </div>
