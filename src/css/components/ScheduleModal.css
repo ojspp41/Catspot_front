@@ -1,0 +1,105 @@
+/* ScheduleModal.css */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+}
+/* 고양이 모양을 위한 상단 삼각형 */
+
+.room-name {
+    font-family: 'ADLaM Display', sans-serif; /* Set the font family */
+    font-weight: 700; /* Bold weight */
+    font-size: 32px; /* Font size of 32px */
+    text-align: center; /* Center text alignment */
+    color: #000000; /* Fill color (black) */
+    margin-bottom: 30px;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative
+}
+.modal-content::before,
+.modal-content::after {
+    content: "";
+    position: absolute;
+    top: -30px; /* modal-content 상단에서의 위치 */
+    border-left: 30px solid transparent; /* 가로 크기 확장 */
+    border-right: 30px solid transparent; /* 가로 크기 확장 */
+    border-bottom: 40px solid white; /* 세로 크기 확장 */
+}
+
+
+.modal-content::before {
+    left: 20%; /* 왼쪽 삼각형의 위치 */
+}
+
+.modal-content::after {
+    right: 20%; /* 오른쪽 삼각형의 위치 */
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px; /* All text inside table set to 12px */
+    margin-bottom: 20px;
+}
+
+.schedule-table th,
+.schedule-table td {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 8px;
+    text-align: center; /* Horizontally center text */
+    vertical-align: middle; /* Vertically center text */
+}
+
+/* Add border between subject and time, but remove for leftmost and rightmost */
+.schedule-table th:not(:first-child),
+.schedule-table td:not(:first-child) {
+    border-left: 1px solid #ddd; /* Add border between columns */
+}
+
+.schedule-table th:first-child, 
+.schedule-table td:first-child {
+    border-left: none; /* No border on the left side */
+}
+
+.schedule-table th:last-child, 
+.schedule-table td:last-child {
+    border-right: none; /* No border on the right side */
+}
+
+/* Subject column width */
+.schedule-table th:first-child, 
+.schedule-table td:first-child {
+    width: 36%; /* Subject column width 36% */
+}
+
+
+.close-button {
+    margin-top: 40px;
+    padding: 10px 20px;
+    background-color: #182981;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 90%; /* 너비를 90%로 줄임 */
+    display: block; /* 블록 요소로 변경 */
+    margin-left: auto; /* 왼쪽 여백 자동 */
+    margin-right: auto; /* 오른쪽 여백 자동 */
+    font-weight:bold ;
+    font-size: 17px;
+}
