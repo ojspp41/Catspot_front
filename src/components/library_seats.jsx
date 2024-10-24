@@ -5,7 +5,7 @@ export default function LibrarySeats({ placeIdx, Seats }) {
 
   return (
     <div className="library_seats">
-      <img src={image} alt="열람실" />
+      <img src={image} alt="열람실" className="library-img" />
 
       <div className="library_seats_head">
         <p className="head">제 {placeIdx} 자유열람실</p>
