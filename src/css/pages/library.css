@@ -2,27 +2,24 @@
   display: grid;
   gap: 28px;
 
-  .header {
-    position: sticky;
-    top: 0;
-    inset-block-start: 0;
-    background-color: white;
-  }
-
   .library_rooms {
     display: grid;
     gap: 12px;
     overflow-y: scroll;
-    height: 500px;
+    height: 800px;
   }
 
   .library_rooms::-webkit-scrollbar {
-    width: 8px;
+    width: 4px;
     background-color: transparent;
   }
 
   .library_rooms::-webkit-scrollbar-thumb {
     background-color: lightgrey;
     border-radius: 10px;
+  }
+
+  a {
+    display: inline-block;
   }
 }
