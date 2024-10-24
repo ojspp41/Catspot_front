@@ -1,0 +1,25 @@
+.main-library {
+  display: grid;
+  gap: 28px;
+
+  .library_rooms {
+    display: grid;
+    gap: 12px;
+    overflow-y: scroll;
+    height: 800px;
+  }
+
+  .library_rooms::-webkit-scrollbar {
+    width: 4px;
+    background-color: transparent;
+  }
+
+  .library_rooms::-webkit-scrollbar-thumb {
+    background-color: lightgrey;
+    border-radius: 10px;
+  }
+
+  a {
+    display: inline-block;
+  }
+}
