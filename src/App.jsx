@@ -7,8 +7,9 @@ import LibrarySite2 from "./pages/library_site2.jsx";
 import LibrarySite3 from "./pages/library_site3.jsx";
 import LibrarySite4 from "./pages/library_site4.jsx";
 import LibrarySite5 from "./pages/library_site5.jsx";
+import './App.css';
 
-export default function App() {
+function App() {
   return (
     <RecoilRoot>
       <Router>
@@ -25,3 +26,4 @@ export default function App() {
     </RecoilRoot>
   );
 }
+export default App;
