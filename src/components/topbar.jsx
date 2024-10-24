@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import "../css/components/navbar.css";
+import "../css/components/topbar.css";
 
-export const Navbar = ({ title }) => {
+export const Topbar = ({ title }) => {
   const navigate = useNavigate();
 
   const handleBackClick = () => {

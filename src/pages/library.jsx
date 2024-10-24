@@ -1,6 +1,6 @@
 // import { useState, useEffect } from "react";
 // import axios from "axios";
-import { Navbar } from "../components/Navbar.jsx";
+import { Topbar } from "./../components/topbar.jsx";
 import LibrarySeats from "../components/library_seats.jsx";
 import image from "/assets/astronaut_25 1.png";
 import { Link } from "react-router-dom";
@@ -41,7 +41,7 @@ export default function Library() {
 
   return (
     <div className="main-library">
-      <Navbar title="도서관 좌석 현황" />
+      <Topbar title="도서관 잔여 좌석" />
       <div className="library_rooms">
         <Link to="/Library_site1">
           <LibrarySeats placeIdx="1" Seats={sampleSeats} />
