@@ -1,7 +1,33 @@
 .character {
+  .wifi1 {
+    width: 80px;
+    position: absolute;
+    top: 120px;
+  }
+
+  .wifi2 {
+    height: 100px;
+    position: absolute;
+    top: 60px;
+  }
+
+  .wifi3 {
+    height: 80px;
+    position: absolute;
+    top: 50px;
+    margin-left: 10px;
+  }
+
+  .wifi-wrapper {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+  }
+
   .cat {
-    width: 310px;
-    height: 385px;
+    width: 400px;
+    height: 485px;
+    margin-left: 20px;
   }
 
   .cat-wrapper {
@@ -12,51 +38,87 @@
   }
 
   .eyes {
+    width: 171px;
+    height: 177px;
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -55%);
+    transform: translate(-45%, -55%);
   }
 }
 
 @keyframes eyesMove {
   0% {
-    transform: translate(-50%, -55%);
+    transform: translate(-45%, -55%);
   }
 
   12.5% {
-    transform: translate(-55%, -55%);
+    transform: translate(-40%, -55%);
   }
 
   25% {
-    transform: translate(-45%, -55%);
+    transform: translate(-50%, -55%);
   }
 
   37.5% {
-    transform: translate(-55%, -55%);
+    transform: translate(-40%, -55%);
   }
 
   50% {
-    transform: translate(-45%, -55%);
+    transform: translate(-50%, -55%);
   }
 
   62.5% {
-    transform: translate(-45%, -60%);
+    transform: translate(-40%, -60%);
   }
 
   75% {
-    transform: translate(-45%, -60%);
+    transform: translate(-40%, -60%);
   }
 
   87.5% {
-    transform: translate(-50%, -55%);
+    transform: translate(-45%, -55%);
   }
 
   100% {
-    transform: translate(-50%, -55%);
+    transform: translate(-45%, -55%);
   }
 }
 
 .eyes {
-  animation: eyesMove 5s infinite;
+  animation: eyesMove 8s infinite;
+}
+
+@keyframes wifianimation {
+  0% {
+    opacity: 0.8;
+  }
+  5% {
+    opactiy: 1;
+  }
+  6% {
+    opactiy: 0.1;
+  }
+  100% {
+    opactiy: 0.1;
+  }
+}
+
+.wifi {
+  opacity: 0;
+  animation: wifianimation 2s infinite;
+}
+
+.wifi3 {
+  -o-animation-delay: 800ms;
+  -moz-animation-delay: 800ms;
+  -webkit-animation-delay: 800ms;
+  animation-delay: 800ms;
+}
+
+.wifi2 {
+  -o-animation-delay: 400ms;
+  -moz-animation-delay: 400ms;
+  -webkit-animation-delay: 400ms;
+  animation-delay: 400ms;
 }
