@@ -1,19 +1,21 @@
 .mainpage {
-  background-color: #fff;
-  color: #182981;
-  padding-block-start: 120px;
+  height: auto;
+  background-color: #182981;
+  color: #fff;
   flex: 1;
 
-  h1 {
+  .title {
     font-size: 48px;
     text-align: center;
-    font-family: "ADLaM Display";
+    font-family: "title-font";
   }
 
-  p {
+  .sub-title {
     font-size: 15px;
     text-align: right;
     text-align: center;
-    margin-left: 70px;
+    margin-left: 120px;
+    padding-block-start: 100px;
+    font-family: "LaundryGothic Regular";
   }
 }
