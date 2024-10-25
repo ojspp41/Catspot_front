@@ -1,7 +1,7 @@
 .mainpage {
   height: auto;
-  background-color: #182981;
-  color: #fff;
+  background-color: #fff;
+  color: #182981;
   flex: 1;
 
   .title {
