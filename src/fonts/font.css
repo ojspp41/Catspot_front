@@ -1,0 +1,14 @@
+@font-face {
+  font-family: "LaundryGothic Bold";
+  src: url("./LaundryGothic Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "LaundryGothic Regular";
+  src: url("./LaundryGothic Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "title-font";
+  src: url("./title-font.woff") format("woff");
+}
