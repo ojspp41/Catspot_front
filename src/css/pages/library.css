@@ -21,4 +21,8 @@
     inline-size: 325px;
     block-size: 125px;
   }
+
+  button {
+    all: unset;
+  }
 }

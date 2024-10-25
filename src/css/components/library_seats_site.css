@@ -1,18 +1,18 @@
 .library-site {
   background-color: #fff;
 
-  p {
+  .library-room-name {
     font-size: 22px;
     text-align: center;
     margin-top: 45px;
     margin-bottom: 55px;
+    font-family: "LaundryGothic Regular";
   }
 
-  figure {
-    width: 100%;
-    height: 550px;
-    text-align: center;
-    align-content: center;
-    border: 1px solid black;
+  .library-page-wrapper {
+    img {
+      width: 100%;
+      height: auto;
+    }
   }
 }
