@@ -35,8 +35,13 @@ export default function Library() {
   }, []);
 
   if (loading) {
-    return <p>Loading...</p>;
+    return (
+      <div className="loading-spinner-container">
+        <div className="loading-spinner"></div>
+      </div>
+    );
   }
+  
   if (!seats || seats.length === 0) {
     return <p>No data available.</p>;
   }

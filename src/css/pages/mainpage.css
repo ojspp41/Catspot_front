@@ -3,18 +3,28 @@
   color: #182981;
   flex: 1;
   overflow: hidden;
-  .title {
-    font-size: 48px;
-    text-align: center;
-    font-family: "title-font";
-  }
+  position: relative; /* Set this to make .top-right-image positioned relative to .mainpage */
+}
 
-  .sub-title {
-    font-size: 15px;
-    text-align: right;
-    text-align: center;
-    margin-left: 120px;
-    padding-block-start: 100px;
-    font-family: "LaundryGothic Regular";
-  }
+.title {
+  font-size: 48px;
+  text-align: center;
+  font-family: "title-font";
+}
+
+.sub-title {
+  font-size: 15px;
+  text-align: center;
+  margin-left: 120px;
+  padding-top: 100px;
+  font-family: "LaundryGothic Regular";
+}
+
+.top-right-image {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 80px; /* Adjust size as needed */
+  height: auto;
+  z-index: 10;
 }

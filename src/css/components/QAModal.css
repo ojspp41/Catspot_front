@@ -1,0 +1,102 @@
+.qa-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.qa-modal {
+  position: relative;
+  background: #ffffff;
+  padding: 30px 20px;
+  border-radius: 12px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.qa-modal h2 {
+  margin-bottom: 20px;
+  color: #182981;
+  font-size: 36px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.qa-modal input,
+.qa-modal textarea {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0;
+  border: 1px solid #dcdcdc;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+  font-size: 16px;
+  color: #333;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.qa-modal input:focus,
+.qa-modal textarea:focus {
+  border-color: #182981;
+  box-shadow: 0 0 5px rgba(24, 41, 129, 0.2);
+  outline: none;
+}
+
+.qa-modal textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+.close-icon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.close-icon:hover {
+  opacity: 1;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 12px 0;
+  margin-top: 20px;
+  border: none;
+  border-radius: 6px;
+  background-color: #182981;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.submit-button:hover {
+  background-color: #14245f;
+}
+
+.submit-button:active {
+  transform: scale(0.98);
+}
+
+.error {
+  color: #d9534f;
+  font-size: 14px;
+  margin-top: -8px;
+  margin-bottom: 10px;
+  text-align: left;
+}
