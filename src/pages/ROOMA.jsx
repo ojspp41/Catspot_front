@@ -4,7 +4,7 @@ import { currentBuildingState, currentFloorState } from "../Atom.jsx";
 import axiosInstance from "../axiosConfig.jsx";
 import { Navbar } from "../components/Navbar";
 import { useNavigate } from "react-router-dom";
-import "../css/pages/room.css";
+import "../css/pages/Room.css";
 import Stair from "../components/Stair";
 
 const Rooma = () => {
