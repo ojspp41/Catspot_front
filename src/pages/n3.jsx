@@ -4,11 +4,11 @@ import RoomBox from "../components/RoomBox";
 import ScheduleModal from "../components/ScheduleModal";
 import axiosInstance from "../axiosConfig";
 import "../css/pages/n3.css";
-
+import { useNavigate } from "react-router-dom";
 const N3 = () => {
   const [selectedRoom, setSelectedRoom] = useState(null); // Data for selected room
   const [highlightedRooms, setHighlightedRooms] = useState([]); // Highlighted room list
-
+  const navigate = useNavigate(); // Initialize navigate for routing
   // Fetch highlighted rooms on page load
   useEffect(() => {
     const fetchHighlightedRooms = async () => {
@@ -48,6 +48,9 @@ const N3 = () => {
   const closeModal = () => {
     setSelectedRoom(null);
   };
+  const goToMariaRoom = () => {
+    navigate("/room/m3/m3");
+  };
 
   return (
     <>
@@ -55,7 +58,12 @@ const N3 = () => {
 
       <div className="n3_container">
         <div className="border-marker marker-red marker-top-left"></div>
-        <div className="border-marker marker-maria marker-top-right-maria">마리아관</div>
+        <div
+          className="border-marker marker-maria marker-top-right-maria"
+          onClick={goToMariaRoom} // Add onClick handler
+        >
+          마리아관
+        </div>
         <div className="border-marker marker-red marker-bottom-left"></div>
         
         {/* N301 section */}

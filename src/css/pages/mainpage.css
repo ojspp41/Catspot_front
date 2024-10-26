@@ -2,7 +2,7 @@
   background-color: #fff;
   color: #182981;
   flex: 1;
-
+  overflow: hidden;
   .title {
     font-size: 48px;
     text-align: center;

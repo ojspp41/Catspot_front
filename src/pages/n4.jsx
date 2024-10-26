@@ -4,11 +4,14 @@ import RoomBox from '../components/RoomBox';
 import ScheduleModal from '../components/ScheduleModal';
 import axiosInstance from '../axiosConfig';
 import "../css/pages/n1.css";
-
+import { useNavigate } from 'react-router-dom';
 const N4 = () => {
   const [selectedRoom, setSelectedRoom] = useState(null); // Data for selected room
   const [highlightedRooms, setHighlightedRooms] = useState([]); // Highlighted rooms list
-
+  const navigate = useNavigate(); 
+  const goToMariaRoom = () => {
+    navigate("/room/m4/m4");
+  };
   // Fetch highlighted rooms on page load
   useEffect(() => {
     const fetchHighlightedRooms = async () => {
@@ -53,7 +56,12 @@ const N4 = () => {
       
       <div className="n1_container">
         <div className="border-marker marker-blue marker-top-left"></div>
-        <div className="border-marker marker-maria marker-top-right-maria">마리아관</div>
+        <div
+          className="border-marker marker-maria marker-top-right-maria"
+          onClick={goToMariaRoom} // Add onClick handler
+        >
+          마리아관
+        </div>
         <div className="border-marker marker-red marker-bottom-left"></div>
 
         {/* Left column */}

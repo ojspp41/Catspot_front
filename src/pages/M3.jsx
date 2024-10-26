@@ -4,11 +4,11 @@ import RoomBox from "../components/RoomBox";
 import ScheduleModal from "../components/ScheduleModal";
 import axiosInstance from "../axiosConfig";
 import "../css/pages/m3.css";
-
+import { useNavigate } from 'react-router-dom';
 const M3 = () => {
   const [selectedRoom, setSelectedRoom] = useState(null); // Data for selected room
   const [highlightedRooms, setHighlightedRooms] = useState([]); // Highlighted room list
-
+  const navigate = useNavigate(); // Initialize navigate for routing
   // Fetch highlighted rooms on page load
   useEffect(() => {
     const fetchHighlightedRooms = async () => {
@@ -46,13 +46,20 @@ const M3 = () => {
   const closeModal = () => {
     setSelectedRoom(null);
   };
-
+  const goToNicolsRoom = () => {
+    navigate("/room/n3/n3");
+  };
   return (
     <>
       <Navbar title="빈강의실" />
       <div className="m3_container">
         <div className="border-marker marker-red marker-bottom-left"></div>
-        <div className="border-marker marker-nicols marker-top-right-nicols">니콜스관</div>
+        <div
+          className="border-marker marker-nicols marker-top-right-nicols"
+          onClick={goToNicolsRoom} // Add onClick handler
+        >
+          니콜스관
+        </div>
 
         {/* Left column with RoomBox components */}
         <div className="room-column room-column-left">
