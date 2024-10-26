@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import axiosInstance from "../axiosConfig.jsx";
 import library1A from "/assets/library1A.svg";
 import library1B from "/assets/library1B.svg";
 import library1C from "/assets/library1C.svg";
@@ -20,17 +19,26 @@ export default function Library() {
   useEffect(() => {
     const fetchSeatsData = async () => {
       setLoading(true);
-      try {
-        const response = await axiosInstance.get('/api/study-seat');
-        console.log(response);
-        response.data.data = response.data.data.filter(item => item.placeName !== "대학원 열람석");
+      
+      // Mock data
+      const mockData = [
+        { placeIdx: 1, placeName: "제 1-A 자유열람실", url: "/library/1A", allSeats: 100, useSeats: 50, restSeats: 50 },
+        { placeIdx: 2, placeName: "제 1-B 자유열람실", url: "/library/1B", allSeats: 80, useSeats: 20, restSeats: 60 },
+        { placeIdx: 3, placeName: "제 1-c 자유열람실", url: "/library/1C", allSeats: 70, useSeats: 30, restSeats: 40 },
+        { placeIdx: 4, placeName: "제 1-D 자유열람실", url: "/library/1D", allSeats: 60, useSeats: 40, restSeats: 20 },
+        { placeIdx: 5, placeName: "제 2-A 자유열람실", url: "/library/2A", allSeats: 90, useSeats: 70, restSeats: 20 },
+        { placeIdx: 6, placeName: "제 2-B 자유열람실 2B", url: "/library/2B", allSeats: 50, useSeats: 25, restSeats: 25 },
+        { placeIdx: 7, placeName: "김수환관", url: "/library/K", allSeats: 100, useSeats: 80, restSeats: 20 },
+        { placeIdx: 8, placeName: "메인 스퀘어", url: "/library/M", allSeats: 120, useSeats: 90, restSeats: 30 },
+      ];
 
-        setSeats(response.data.data);
-      } catch (error) {
-        console.error("Error fetching seats data:", error);
-      }
+      // Filter out items if necessary
+      const filteredData = mockData.filter(item => item.placeName !== "대학원 열람석");
+      setSeats(filteredData);
+
       setLoading(false);
     };
+
     fetchSeatsData();
   }, []);
 
