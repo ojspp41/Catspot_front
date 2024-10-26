@@ -1,26 +1,28 @@
 .main-library {
-  display: grid;
-  gap: 28px;
+  background-color: #fff;
+  display: flex;
+  flex-flow: column nowrap;
+  align-content: center;
+  gap: 18px;
 
   .library_rooms {
-    margin-top: 130px;
-    display: grid;
+    background-color: #fff;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
     gap: 12px;
-    overflow-y: scroll;
-    height: 800px;
-  }
+    justify-content: center;
 
-  .library_rooms::-webkit-scrollbar {
-    width: 4px;
-    background-color: transparent;
-  }
-
-  .library_rooms::-webkit-scrollbar-thumb {
-    background-color: lightgrey;
-    border-radius: 10px;
+    /* inline-size: 390px; */
   }
 
   a {
     display: inline-block;
+    inline-size: 325px;
+    block-size: 125px;
+  }
+
+  button {
+    all: unset;
   }
 }

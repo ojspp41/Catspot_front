@@ -1,14 +1,14 @@
 import "./../css/components/library_seats.css";
 
-export default function LibrarySeats({ placeIdx, Seats }) {
-  const { image, allSeats, useSeats, restSeats } = Seats;
+export default function LibrarySeats({ name, image, Seats }) {
+  const { allSeats, useSeats, restSeats } = Seats;
 
   return (
     <div className="library_seats">
       <img src={image} alt="열람실" className="library-img" />
 
       <div className="library_seats_head">
-        <p className="head">제 {placeIdx} 자유열람실</p>
+        <p className="head">{name}</p>
         <div className="library_seats_detail">
           <p className="detail">잔여좌석</p>
           <p className="detail">사용중</p>

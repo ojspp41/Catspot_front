@@ -1,4 +1,4 @@
-library-img {
+.library-img {
   inline-size: 105px;
   block-size: 125px;
   border: 1px solid black;
@@ -7,11 +7,12 @@ library-img {
 }
 
 .library_seats_head {
-  inline-size: 250px;
+  inline-size: 220px;
+  block-size: 125px;
   border: 1px solid black;
   border-radius: 10px;
   padding-inline: 10px;
-  block-size: 125px;
+  font-family: "LaundryGothic Regular";
 
   .head {
     text-align: center;
@@ -46,7 +47,7 @@ a {
 .seats_data {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-between;
+  justify-content: space-around;
   p {
     font-weight: bold;
   }

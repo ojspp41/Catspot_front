@@ -14,8 +14,12 @@ export default function MainButton() {
 
   return (
     <div className="main-button">
-      <button onClick={LibraryButton}>도서관 잔여 좌석</button>
-      <button onClick={ClassroomButton}>빈 강의실</button>
+      <button className="library-btn" onClick={LibraryButton}>
+        도서관 잔여 좌석
+      </button>
+      <button className="classroom-btn" onClick={ClassroomButton}>
+        빈 강의실
+      </button>
     </div>
   );
 }
