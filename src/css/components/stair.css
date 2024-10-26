@@ -43,8 +43,8 @@
     margin-top: 10px;
   }
   .icon {
-    width: 80px; /* 아이콘 크기 조절 */
-    height: 70px;
+    width: 120px; /* 아이콘 크기 조절 */
+    
     margin-bottom: 20px;
     animation: bounce 1.6s ease-in-out infinite; /* 애니메이션을 아이콘에만 적용 */
   }
