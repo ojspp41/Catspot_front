@@ -1,8 +1,7 @@
-import { defineConfig } from 'vite';
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
+// https://vitejs.dev/config/
 export default defineConfig({
-  // 기타 설정
-  server: {
-    historyApiFallback: true,
-  },
-});
+  plugins: [react()],
+})
