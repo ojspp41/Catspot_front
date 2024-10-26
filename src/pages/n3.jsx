@@ -36,7 +36,7 @@ const N3 = () => {
           buildingName: 'N',
           classroomNumber: room.substring(1), // Extract the numeric part
           day: '월',                           // Example day
-          hour: 11,                            // Example hour
+          hour: 13,                            // Example hour
         });
         setSelectedRoom(response.data); // Store fetched schedule in state
       } catch (error) {

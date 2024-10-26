@@ -41,7 +41,7 @@ const N2 = () => {
         buildingName,
         classroomNumber: room.substring(1),
         day: '월',
-        hour: 11,
+        hour: 13,
       });
       setSelectedRoom(response.data);
     } catch (error) {

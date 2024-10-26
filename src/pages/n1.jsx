@@ -48,7 +48,7 @@ const handleRoomClick = async (room) => {
       buildingName,
       classroomNumber: room.substring(1), // room에서 숫자 부분만 추출
       day: '월',
-      hour: 11,
+      hour: 13,
     });
     setSelectedRoom(response.data); // 받아온 데이터를 selectedRoom에 저장
   } catch (error) {
