@@ -24,8 +24,9 @@ import V3 from "./pages/V3.jsx";
 function App() {
   return (
     <RecoilRoot>
+      <OpenExternalBrowser />
       <BrowserRouter>
-        <OpenExternalBrowser />
+        
         <div className="App">
           <Routes>
             {/* Mainpage and Library routes */}
