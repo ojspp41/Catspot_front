@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { Navbar } from '../components/Navbar';
-import RoomBox from '../components/RoomBox';
-import ScheduleModal from '../components/ScheduleModal'; // 모달 추가
-import "../css/pages/d1.css";
+import React, { useState } from "react";
+import { Navbar } from "../components/Navbar";
+import RoomBox from "../components/RoomBox";
+import ScheduleModal from "../components/ScheduleModal"; // 모달 추가
+import "../css/pages/d3.css";
 
 // 목데이터 예시
 const mockScheduleData = {
@@ -85,7 +85,7 @@ const mockScheduleData = {
   },
 };
 
-const D4 = () => {
+const D3 = () => {
   const [selectedRoom, setSelectedRoom] = useState(null);
 
   const handleRoomClick = (room) => {
@@ -99,59 +99,49 @@ const D4 = () => {
   return (
     <>
       <Navbar title="빈강의실" />
-      
-      <div className="d1_container">
-        <div className="border-marker marker-blue marker-top-left"></div>
-        <div className="border-marker marker-maria marker-top-right-maria">마리아관</div>
-        <div className="border-marker marker-red marker-bottom-left"></div>
+      <div className="d3_container">
+        <div className="border-marker marker-blue marker-top-right-center"></div>
+        <div className="border-marker marker-red marker-top-right"></div>
+        <div className="border-marker marker-red marker-bottom-right"></div>
 
         {/* 왼쪽 컬럼 */}
         <div className="room-column room-column-left">
-          <RoomBox text="N406" onClick={() => handleRoomClick("N406")} />
-          <RoomBox text="N407" onClick={() => handleRoomClick("N407")} />
-          <RoomBox text="N409" onClick={() => handleRoomClick("N409")} />
-          <div style={{ marginBottom: '70px' }}></div>
-          <RoomBox text="N413" onClick={() => handleRoomClick("N413")} />
-          <RoomBox text="N415" onClick={() => handleRoomClick("N415")} />
+          <RoomBox text="D304" className="room-box-highlight" onClick={() => handleRoomClick("D304")} />
+          <RoomBox text="D335" onClick={() => handleRoomClick("D335")} />
+          <RoomBox text="D336" onClick={() => handleRoomClick("D336")} />
+          <RoomBox text="D340" className="room-box-highlight" onClick={() => handleRoomClick("D340")} />
+          <RoomBox text="D341" onClick={() => handleRoomClick("D341")} />
         </div>
 
         {/* 중앙 텍스트 */}
         <div className="centered-text">
-          <span>니</span>
-          <span>콜</span>
-          <span>스</span>
-          <span>4</span>
+          <span>다</span>
+          <span>솔</span>
+          <span>관</span>
+          <span>3</span>
           <span>층</span>
         </div>
 
         {/* 오른쪽 컬럼 */}
         <div className="room-column room-column-right">
-          <RoomBox text="N405" onClick={() => handleRoomClick("N405")} />
-          <RoomBox text="N408" onClick={() => handleRoomClick("N408")} />
-          <RoomBox text="N410" onClick={() => handleRoomClick("N410")} />
-          <RoomBox text="N411" className="room-box-highlight" onClick={() => handleRoomClick("N411")} />
-          <RoomBox text="N412" onClick={() => handleRoomClick("N412")} />
-          <RoomBox text="N414" onClick={() => handleRoomClick("N414")} />
-          <RoomBox text="N414" onClick={() => handleRoomClick("N414")} />
-          <RoomBox text="N414" onClick={() => handleRoomClick("N414")} />
+          <RoomBox text="D308" onClick={() => handleRoomClick("D308")} />
+          <RoomBox text="D304" className="room-box-highlight" onClick={() => handleRoomClick("D304")} />
+          <RoomBox text="D303" onClick={() => handleRoomClick("D303")} />
+          <RoomBox text="D301" className="room-box-highlight" onClick={() => handleRoomClick("D301")} />
         </div>
-      </div>  {/* n1_container 닫힘 */}
-      
+      </div>{" "}
+      {/* n1_container 닫힘 */}
       {/* 입출구 및 계단 표시 */}
       <div className="label-container">
         <div className="label label-exit"></div>
         <span className="label-text">입출구</span>
-        <div className="label label-stairs" style={{ marginLeft: '20px' }}></div>
+        <div className="label label-stairs" style={{ marginLeft: "20px" }}></div>
         <span className="label-text">계단</span>
       </div>
-
-      <div style={{ margin: '30px' }}></div>
-
-      {selectedRoom && (
-        <ScheduleModal schedule={selectedRoom} onClose={closeModal} />
-      )}
+      <div style={{ margin: "30px" }}></div>
+      {selectedRoom && <ScheduleModal schedule={selectedRoom} onClose={closeModal} />}
     </>
   );
 };
 
-export default D4;
+export default D3;

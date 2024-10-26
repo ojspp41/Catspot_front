@@ -17,7 +17,17 @@ import N1 from "./pages/n1";
 import N2 from "./pages/n2";
 import N3 from "./pages/n3";
 import N4 from "./pages/n4";
-import D4 from "./pages/D1.jsx";
+import D2 from "./pages/D2.jsx";
+import D3 from "./pages/D3.jsx";
+import D4 from "./pages/D4.jsx";
+import BA2 from "./pages/BA2.jsx";
+import M2 from "./pages/M2.jsx";
+import M3 from "./pages/M3.jsx";
+import M4 from "./pages/M4.jsx";
+import V1 from "./pages/V1.jsx";
+// import V2 from "./pages/V2.jsx";
+// import V3 from "./pages/V3.jsx";
+
 function App() {
   return (
     <RecoilRoot>
@@ -42,7 +52,16 @@ function App() {
             <Route path="/room/n2" element={<N2 />} />
             <Route path="/room/n3" element={<N3 />} />
             <Route path="/room/n4" element={<N4 />} />
+            <Route path="/room/d2" element={<D2 />} />
+            <Route path="/room/d3" element={<D3 />} />
             <Route path="/room/d4" element={<D4 />} />
+            <Route path="/room/ba2" element={<BA2 />} />
+            <Route path="/room/m2" element={<M2 />} />
+            <Route path="/room/m3" element={<M3 />} />
+            <Route path="/room/m4" element={<M4 />} />
+            <Route path="/room/v1" element={<V1 />} />
+            {/* <Route path="/room/v2" element={<V2 />} /> */}
+            {/* <Route path="/room/v3" element={<V3 />} /> */}
           </Routes>
         </div>
       </Router>
