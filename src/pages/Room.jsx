@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useRecoilState } from "recoil";
 import { currentBuildingState, currentFloorState } from "../Atom.jsx";
 import axiosInstance from "../axiosConfig.jsx"; // Axios 인스턴스 가져오기
-import { Navbar } from "../components/Navbar";
+import { Navba } from "../components/Navba";
 import { useNavigate } from "react-router-dom"; // useNavigate import
 import "../css/pages/room.css";
 import Stair from "../components/Stair";
@@ -29,7 +29,7 @@ const Room = () => {
         return "d";
       case "성심관":
         return "sh";
-      case "비루투스":
+      case "비루투스관":
         return "v";
       case "밤비노관":
         return "ba";
@@ -114,7 +114,7 @@ const Room = () => {
 
   return (
     <>
-      <Navbar title="빈강의실" />
+      <Navba title="빈강의실" />
       <div className="room-centered-box" onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
         <div className="room-category" style={{ transform: `translateY(${offsetY}px)` }}>
         <p

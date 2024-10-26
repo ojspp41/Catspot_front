@@ -3,11 +3,11 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import "../css/components/navbar.css";
 
-export const Navbar = ({ title }) => {
+export const Navba = ({ title }) => {
   const navigate = useNavigate();
 
   const handleBackClick = () => {
-    navigate("/room");
+    navigate("/");
   };
 
   return (

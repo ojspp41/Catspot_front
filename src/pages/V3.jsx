@@ -72,14 +72,14 @@ const V3 = () => {
         {/* Right column with RoomBox components */}
         <div className="room-column room-column-right">
           <RoomBox
-            text="V111"
-            onClick={() => handleRoomClick("V111")}
-            className={highlightedRooms.includes(parseInt("111")) ? "room-box-highlight" : ""}
+            text="V313"
+            onClick={() => handleRoomClick("V313")}
+            className={highlightedRooms.includes(parseInt("313")) ? "room-box-highlight" : ""}
           />
           <RoomBox
-            text="V112"
-            onClick={() => handleRoomClick("V112")}
-            className={highlightedRooms.includes(parseInt("112")) ? "room-box-highlight" : ""}
+            text="V313"
+            onClick={() => handleRoomClick("V321")}
+            className={highlightedRooms.includes(parseInt("321")) ? "room-box-highlight" : ""}
           />
         </div>
       </div>

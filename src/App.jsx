@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Mainpage from "./pages/mainpage.jsx";
 import Library from "./pages/library.jsx";
 import "./App.css";
-
+import Rooma from "./pages/ROOMA.jsx";
 import Room from "./pages/room";
 import N1 from "./pages/n1";
 import N2 from "./pages/n2";
@@ -38,7 +38,7 @@ function App() {
             <Route path="/room/n2/:roomId" element={<N2 />} />
             <Route path="/room/n3/:roomId" element={<N3 />} />
             <Route path="/room/n4/:roomId" element={<N4 />} />
-            <Route path="/room/d1/:roomId" element={<Room/>} />
+            <Route path="/room/d1/:roomId" element={<Rooma/>} />
             <Route path="/room/d2/:roomId" element={<D2 />} />
             <Route path="/room/d3/:roomId" element={<D3 />} />
             <Route path="/room/d4/:roomId" element={<D4 />} />

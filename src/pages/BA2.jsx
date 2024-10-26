@@ -59,7 +59,7 @@ const BA2 = () => {
 
         {/* BA203 Room */}
         <div
-          className={`room-box-max ${highlightedRooms.includes(parseInt("203")) ? "room-box-highlight" : ""}`}
+          className={`room-box-max_ba2 ${highlightedRooms.includes(parseInt("203")) ? "room-box-highlight" : ""}`}
           onClick={() => handleRoomClick("BA203")}
         >
           <div className="room-box-content">BA203</div>
