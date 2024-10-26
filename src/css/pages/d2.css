@@ -1,0 +1,19 @@
+.d2_container {
+  position: relative;
+  width: calc(100% - 40px);
+  height: 643px;
+  margin: 143px auto 0 auto;
+  border: 3px solid #dfdfdf;
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between; /* 왼쪽과 오른쪽으로 RoomBox를 배치 */
+  padding: 20px 40px; /* 컨테이너 안에 여백 추가 */
+
+  .marker-bottom-right-center {
+    bottom: 50px;
+    right: calc(50% - 40px);
+    transform: translateY(50%);
+  }
+}
