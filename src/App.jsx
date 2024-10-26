@@ -17,7 +17,7 @@ import N1 from "./pages/n1";
 import N2 from "./pages/n2";
 import N3 from "./pages/n3";
 import N4 from "./pages/n4";
-
+import D4 from "./pages/D1.jsx";
 function App() {
   return (
     <RecoilRoot>
@@ -42,6 +42,7 @@ function App() {
             <Route path="/room/n2" element={<N2 />} />
             <Route path="/room/n3" element={<N3 />} />
             <Route path="/room/n4" element={<N4 />} />
+            <Route path="/room/d4" element={<D4 />} />
           </Routes>
         </div>
       </Router>

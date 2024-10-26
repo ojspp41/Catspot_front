@@ -12,7 +12,7 @@ import libraryM from "/assets/libraryM.svg";
 import { Topbar } from "./../components/topbar.jsx";
 import LibrarySeats from "./../components/library_seats.jsx";
 import "./../css/pages/library.css";
-
+import axiosInstance from "../axiosConfig.jsx";
 const sampleSeats = {
   allSeats: "총 좌석",
   useSeats: "사용 좌석",
@@ -20,22 +20,21 @@ const sampleSeats = {
 };
 
 export default function Library() {
-  // const [seats, setSeats] = useState();
+  // const [seats, setSeats] = useState([]);
   // const [loading, setLoading] = useState(false);
-
   // useEffect(() => {
-  //   const seatsData = async () => {
+  //   const fetchSeatsData = async () => {
   //     setLoading(true);
   //     try {
-  //       const response = await axios.get("http://3.35.114.206/api/study-seat");
+  //       const response = await axiosInstance.get('/api/study-seat');
   //       console.log(response);
-  //       setSeats(response.data.seats);
+  //       setSeats(response.data.data);
   //     } catch (error) {
-  //       console.log(error);
+  //       console.error("Error fetching seats data:", error);
   //     }
   //     setLoading(false);
   //   };
-  //   seatsData();
+  //   fetchSeatsData();
   // }, []);
 
   // if (loading) {
