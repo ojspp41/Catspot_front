@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-  baseURL: 'http://3.35.114.206', // 프록시를 위한 API 기본 URL
+  baseURL: 'https://api2.catsnap.net', // 프록시를 위한 API 기본 URL
   headers: {
     'Content-Type': 'application/json',
   },
