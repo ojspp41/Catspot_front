@@ -28,7 +28,7 @@ const Stair = ({ totalFloors }) => {
         clearInterval(stepAnimation);
         setIsAnimating(false); // 애니메이션 종료
       }
-    }, 100); // 0.5초마다 층 변경
+    }, 200); // 0.5초마다 층 변경
   };
 
   useEffect(() => {

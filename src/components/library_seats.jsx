@@ -5,8 +5,7 @@ export default function LibrarySeats({ name, image, Seats }) {
 
   return (
     <div className="library_seats">
-      <img src={image} alt="열람실" className="library-img" />
-
+      <img src={image} alt={`${name} 이미지`} className="library-img" />
       <div className="library_seats_head">
         <p className="head">{name}</p>
         <div className="library_seats_detail">
@@ -15,9 +14,9 @@ export default function LibrarySeats({ name, image, Seats }) {
           <p className="detail">총 좌석수</p>
         </div>
         <div className="seats_data">
-          <p>150</p>
-          <p>150</p>
-          <p>150</p>
+          <p>{restSeats}</p>
+          <p>{useSeats}</p>
+          <p>{allSeats}</p>
         </div>
       </div>
     </div>

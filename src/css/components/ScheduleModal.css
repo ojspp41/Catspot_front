@@ -103,3 +103,8 @@
     font-weight:bold ;
     font-size: 17px;
 }
+/* ScheduleModal.css */
+.current-time-slot td {
+    background-color: #b9bfe3; /* 현재 시간대의 배경색 */
+  }
+  

@@ -1,84 +1,67 @@
-import React, { useState } from 'react';
-// Axios 인스턴스 가져오기
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { Navbar } from '../components/Navbar';
-// useNavigate import
 import "../css/pages/n1.css";
 import RoomBox from '../components/RoomBox';
 import ScheduleModal from '../components/ScheduleModal';
-
-const mockScheduleData = {
-  N114: {
-    room: "N114",
-    classes: [
-      { time: 9, subjectName: "문제해결기법" },
-      { time: 10, subjectName: "문제해결기법" },
-      { time: 12, subjectName: "데이터베이스설계" },
-    ],
-  },
-  N104: {
-    room: "N104",
-    classes: [
-      { time: 10, subjectName: "인공지능" },
-      { time: 13, subjectName: "컴퓨터구조" },
-    ],
-  },
-  N119: {
-    room: "N119",
-    classes: [
-      { time: 9, subjectName: "소프트웨어공학" },
-      { time: 14, subjectName: "운영체제" },
-    ],
-  },
-  N113: {
-    room: "N113",
-    classes: [
-      { time: 9, subjectName: "컴퓨터과학" },
-      { time: 11, subjectName: "컴퓨터구조" },
-    ],
-  },
-  N102: {
-    room: "N102",
-    classes: [
-      { time: 10, subjectName: "자료구조" },
-      { time: 12, subjectName: "알고리즘" },
-    ],
-  },
-  N101: {
-    room: "N101",
-    classes: [
-      { time: 9, subjectName: "프로그래밍 기초" },
-      { time: 15, subjectName: "데이터 분석" },
-    ],
-  },
-  N112: {
-    room: "N112",
-    classes: [
-      { time: 9, subjectName: "네트워크 기초" },
-      { time: 14, subjectName: "컴퓨터 네트워크" },
-    ],
-  },
-  N110: {
-    room: "N110",
-    classes: [
-      { time: 11, subjectName: "컴퓨터 보안" },
-      { time: 16, subjectName: "암호학" },
-    ],
-  },
-  N103: {
-    room: "N103",
-    classes: [
-      { time: 10, subjectName: "데이터베이스" },
-      { time: 14, subjectName: "데이터 모델링" },
-    ],
-  },
-};
+import axiosInstance from '../axiosConfig';
 
 const N1 = () => {
-  const [selectedRoom, setSelectedRoom] = useState(null);
+  const [selectedRoom, setSelectedRoom] = useState(null); // 선택된 강의실의 데이터
+  const [highlightedRooms, setHighlightedRooms] = useState([]); // 하이라이트된 강의실 목록
+  const { roomId } = useParams();
 
-  const handleRoomClick = (room) => {
-    setSelectedRoom(mockScheduleData[room]);
-  };
+  // roomId에서 buildingName과 floor 추출
+  const buildingName = roomId.charAt(0).toUpperCase();
+  const floor = parseInt(roomId.charAt(1), 10);
+
+  // 페이지가 로드될 때 하이라이트된 강의실 목록 가져오기
+  useEffect(() => {
+    const fetchHighlightedRooms = async () => {
+      const dayNames = ["일", "월", "화", "수", "목", "금", "토"];
+      const currentDate = new Date();
+      const currentDay = dayNames[currentDate.getDay()];
+      const currentHour = currentDate.getHours();
+      try {
+        const response = await axiosInstance.post("/api/classroom", {
+          buildingName,
+          floor,
+          day: '월',
+          hour: 13,
+        });
+        console.log(response);
+        setHighlightedRooms(response.data.classrooms);
+        console.log(highlightedRooms);
+      } catch (error) {
+        console.error("Error fetching highlighted rooms:", error);
+      }
+    };
+
+    fetchHighlightedRooms();
+  }, [buildingName, floor]);
+
+  // 강의실을 클릭할 때 시간표 가져오기
+  
+const handleRoomClick = async (room) => {
+  try {
+    const response = await axiosInstance.post("/api/roomSchedule", {
+      buildingName,
+      classroomNumber: room.substring(1), // room에서 숫자 부분만 추출
+      day: '월',
+      hour: 11,
+    });
+    setSelectedRoom(response.data); // 받아온 데이터를 selectedRoom에 저장
+  } catch (error) {
+    console.error("강의실 시간표를 불러오는 중 오류 발생:", error);
+  }
+};
+
+// selectedRoom이 업데이트될 때마다 값을 콘솔에 출력
+useEffect(() => {
+if (selectedRoom) {
+  console.log(selectedRoom);
+}
+}, [selectedRoom]);
 
   const closeModal = () => {
     setSelectedRoom(null);
@@ -97,29 +80,64 @@ const N1 = () => {
         <div className="border-marker marker-red marker-center-right"></div>
 
         <div className="room-column room-column-left">
-          <RoomBox text="N119" onClick={() => handleRoomClick("N119")} />
-          <RoomBox text="N113" onClick={() => handleRoomClick("N113")} />
+          <RoomBox
+            text="N119"
+            onClick={() => handleRoomClick("N119")}
+            className={highlightedRooms.includes(parseInt("119"))? "room-box-highlight" : ""}
+          />
+          <RoomBox
+            text="N113"
+            onClick={() => handleRoomClick("N113")}
+            className={highlightedRooms.includes(parseInt("113")) ? "room-box-highlight" : ""}
+          />
           <div style={{ marginBottom: '30px' }}></div>
-          <RoomBox text="N102" onClick={() => handleRoomClick("N102")} />
-          <RoomBox text="N101" onClick={() => handleRoomClick("N101")} />
+          <RoomBox
+            text="N102"
+            onClick={() => handleRoomClick("N102")}
+            className={highlightedRooms.includes(parseInt("102"))? "room-box-highlight" : ""}
+          />
+          <RoomBox
+            text="N101"
+            onClick={() => handleRoomClick("N101")}
+            className={highlightedRooms.includes(parseInt("101")) ? "room-box-highlight" : ""}
+          />
         </div>
 
         <div className="centered-text">
           <span>니</span>
           <span>콜</span>
           <span>스</span>
-          <span>1</span>
+          <span>{floor}</span>
           <span>층</span>
         </div>
 
-        {/* 오른쪽 컬럼 */}
         <div className="room-column room-column-right">
-          <RoomBox text="N114" onClick={() => handleRoomClick("N114")} />
-          <RoomBox text="N112" onClick={() => handleRoomClick("N112")} />
-          <RoomBox text="N104" className="room-box-highlight" onClick={() => handleRoomClick("N104")} />
+          <RoomBox
+            text="N114"
+            onClick={() => handleRoomClick("N114")}
+            className={highlightedRooms.includes(parseInt("114")) ? "room-box-highlight" : ""}
+          />
+          <RoomBox
+            text="N112"
+            onClick={() => handleRoomClick("N112")}
+            className={highlightedRooms.includes(parseInt("112")) ? "room-box-highlight" : ""}
+          />
+          <RoomBox
+            text="N104"
+            onClick={() => handleRoomClick("N104")}
+            className={highlightedRooms.includes(parseInt("104")) ? "room-box-highlight" : ""}
+          />
           <div style={{ marginBottom: '10px' }}></div>
-          <RoomBox text="N110" onClick={() => handleRoomClick("N110")} />
-          <RoomBox text="N103" onClick={() => handleRoomClick("N103")} />
+          <RoomBox
+            text="N110"
+            onClick={() => handleRoomClick("N110")}
+            className={highlightedRooms.includes(parseInt("110")) ? "room-box-highlight" : ""}
+          />
+          <RoomBox
+            text="N103"
+            onClick={() => handleRoomClick("N103")}
+            className={highlightedRooms.includes(parseInt("103"))? "room-box-highlight" : ""}
+          />
         </div>
       </div>
 

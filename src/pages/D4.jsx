@@ -1,95 +1,46 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Navbar } from "../components/Navbar";
 import RoomBox from "../components/RoomBox";
-import ScheduleModal from "../components/ScheduleModal"; // 모달 추가
+import ScheduleModal from "../components/ScheduleModal";
+import axiosInstance from "../axiosConfig";
 import "../css/pages/d4.css";
 
-// 목데이터 예시
-const mockScheduleData = {
-  N406: {
-    room: "N406",
-    classes: [
-      { time: 9, subjectName: "인공지능" },
-      { time: 12, subjectName: "알고리즘" },
-    ],
-  },
-  N407: {
-    room: "N407",
-    classes: [
-      { time: 10, subjectName: "데이터베이스" },
-      { time: 13, subjectName: "운영체제" },
-    ],
-  },
-  N409: {
-    room: "N409",
-    classes: [
-      { time: 9, subjectName: "컴퓨터 네트워크" },
-      { time: 15, subjectName: "자료구조" },
-    ],
-  },
-  N413: {
-    room: "N413",
-    classes: [
-      { time: 10, subjectName: "프로그래밍 기초" },
-      { time: 14, subjectName: "프론트엔드 개발" },
-    ],
-  },
-  N415: {
-    room: "N415",
-    classes: [
-      { time: 9, subjectName: "컴퓨터 비전" },
-      { time: 16, subjectName: "기계학습" },
-    ],
-  },
-  N405: {
-    room: "N405",
-    classes: [
-      { time: 11, subjectName: "운영체제" },
-      { time: 14, subjectName: "컴파일러" },
-    ],
-  },
-  N408: {
-    room: "N408",
-    classes: [
-      { time: 9, subjectName: "데이터 분석" },
-      { time: 13, subjectName: "프로그래밍 언어" },
-    ],
-  },
-  N410: {
-    room: "N410",
-    classes: [
-      { time: 10, subjectName: "웹 프로그래밍" },
-      { time: 15, subjectName: "모바일 프로그래밍" },
-    ],
-  },
-  N411: {
-    room: "N411",
-    classes: [
-      { time: 11, subjectName: "네트워크 보안" },
-      { time: 14, subjectName: "암호학" },
-    ],
-  },
-  N412: {
-    room: "N412",
-    classes: [
-      { time: 9, subjectName: "기계학습" },
-      { time: 12, subjectName: "데이터 모델링" },
-    ],
-  },
-  N414: {
-    room: "N414",
-    classes: [
-      { time: 10, subjectName: "프론트엔드 개발" },
-      { time: 14, subjectName: "백엔드 개발" },
-    ],
-  },
-};
-
 const D4 = () => {
-  const [selectedRoom, setSelectedRoom] = useState(null);
+  const [selectedRoom, setSelectedRoom] = useState(null); // Data for selected room
+  const [highlightedRooms, setHighlightedRooms] = useState([]); // Highlighted room list
 
-  const handleRoomClick = (room) => {
-    setSelectedRoom(mockScheduleData[room]);
+  // Fetch highlighted rooms on page load
+  useEffect(() => {
+    const fetchHighlightedRooms = async () => {
+      try {
+        const response = await axiosInstance.post("/api/classroom", {
+          buildingName: 'D', // Building name
+          floor: 4,          // Floor level
+          day: '월',         // Example day, update as necessary
+          hour: 13,          // Example hour, update as necessary
+        });
+        setHighlightedRooms(response.data.classrooms);
+      } catch (error) {
+        console.error("Error fetching highlighted rooms:", error);
+      }
+    };
+
+    fetchHighlightedRooms();
+  }, []);
+
+  // Fetch room schedule when a room is clicked
+  const handleRoomClick = async (room) => {
+    try {
+      const response = await axiosInstance.post("/api/roomSchedule", {
+        buildingName: 'D',
+        classroomNumber: room.substring(1), // Extract the numeric part
+        day: '월',                           // Example day
+        hour: 11,                            // Example hour
+      });
+      setSelectedRoom(response.data); // Store fetched schedule in state
+    } catch (error) {
+      console.error("Error fetching room schedule:", error);
+    }
   };
 
   const closeModal = () => {
@@ -103,16 +54,36 @@ const D4 = () => {
         <div className="border-marker marker-red marker-top-right"></div>
         <div className="border-marker marker-red marker-bottom-right"></div>
 
-        {/* 왼쪽 컬럼 */}
+        {/* Left column */}
         <div className="room-column room-column-left">
-          <RoomBox text="D434" className="room-box-highlight" onClick={() => handleRoomClick("D434")} />
-          <RoomBox text="D435" onClick={() => handleRoomClick("D435")} />
-          <RoomBox text="D440" onClick={() => handleRoomClick("D440")} />
-          <RoomBox text="D441" className="room-box-highlight" onClick={() => handleRoomClick("D441")} />
-          <RoomBox text="D442" onClick={() => handleRoomClick("D442")} />
+          <RoomBox
+            text="D434"
+            className={highlightedRooms.includes(parseInt("434")) ? "room-box-highlight" : ""}
+            onClick={() => handleRoomClick("D434")}
+          />
+          <RoomBox
+            text="D435"
+            className={highlightedRooms.includes(parseInt("435")) ? "room-box-highlight" : ""}
+            onClick={() => handleRoomClick("D435")}
+          />
+          <RoomBox
+            text="D440"
+            className={highlightedRooms.includes(parseInt("440")) ? "room-box-highlight" : ""}
+            onClick={() => handleRoomClick("D440")}
+          />
+          <RoomBox
+            text="D441"
+            className={highlightedRooms.includes(parseInt("441")) ? "room-box-highlight" : ""}
+            onClick={() => handleRoomClick("D441")}
+          />
+          <RoomBox
+            text="D442"
+            className={highlightedRooms.includes(parseInt("442")) ? "room-box-highlight" : ""}
+            onClick={() => handleRoomClick("D442")}
+          />
         </div>
 
-        {/* 중앙 텍스트 */}
+        {/* Centered text */}
         <div className="centered-text">
           <span>다</span>
           <span>솔</span>
@@ -121,24 +92,46 @@ const D4 = () => {
           <span>층</span>
         </div>
 
-        {/* 오른쪽 컬럼 */}
+        {/* Right column */}
         <div className="room-column room-column-right">
-          <RoomBox text="D411" className="room-box-highlight" onClick={() => handleRoomClick("D411")} />
-          <RoomBox text="D409" onClick={() => handleRoomClick("D409")} />
-          <RoomBox text="D405" onClick={() => handleRoomClick("D405")} />
-          <RoomBox text="D404" className="room-box-highlight" onClick={() => handleRoomClick("D404")} />
-          <RoomBox text="D401" onClick={() => handleRoomClick("D401")} />
+          <RoomBox
+            text="D411"
+            className={highlightedRooms.includes(parseInt("411")) ? "room-box-highlight" : ""}
+            onClick={() => handleRoomClick("D411")}
+          />
+          <RoomBox
+            text="D409"
+            className={highlightedRooms.includes(parseInt("409")) ? "room-box-highlight" : ""}
+            onClick={() => handleRoomClick("D409")}
+          />
+          <RoomBox
+            text="D405"
+            className={highlightedRooms.includes(parseInt("405")) ? "room-box-highlight" : ""}
+            onClick={() => handleRoomClick("D405")}
+          />
+          <RoomBox
+            text="D404"
+            className={highlightedRooms.includes(parseInt("404")) ? "room-box-highlight" : ""}
+            onClick={() => handleRoomClick("D404")}
+          />
+          <RoomBox
+            text="D401"
+            className={highlightedRooms.includes(parseInt("401")) ? "room-box-highlight" : ""}
+            onClick={() => handleRoomClick("D401")}
+          />
         </div>
-      </div>{" "}
-      {/* n1_container 닫힘 */}
-      {/* 입출구 및 계단 표시 */}
+      </div>
+
+      {/* Exit and stairs labels */}
       <div className="label-container">
         <div className="label label-exit"></div>
         <span className="label-text">입출구</span>
         <div className="label label-stairs" style={{ marginLeft: "20px" }}></div>
         <span className="label-text">계단</span>
       </div>
+
       <div style={{ margin: "30px" }}></div>
+
       {selectedRoom && <ScheduleModal schedule={selectedRoom} onClose={closeModal} />}
     </>
   );

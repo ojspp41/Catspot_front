@@ -1,90 +1,48 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Navbar } from "../components/Navbar";
 import RoomBox from "../components/RoomBox";
-import ScheduleModal from "../components/ScheduleModal"; // 모달 추가
+import ScheduleModal from "../components/ScheduleModal";
+import axiosInstance from "../axiosConfig";
 import "../css/pages/ba2.css";
 
-// 목데이터 예시
-const mockScheduleData = {
-  N301: {
-    room: "N301",
-    classes: [
-      { time: 9, subjectName: "자료구조" },
-      { time: 12, subjectName: "컴퓨터 네트워크" },
-    ],
-  },
-  N308: {
-    room: "N308",
-    classes: [
-      { time: 10, subjectName: "데이터베이스" },
-      { time: 14, subjectName: "운영체제" },
-    ],
-  },
-  N310: {
-    room: "N310",
-    classes: [
-      { time: 9, subjectName: "프로그래밍 언어" },
-      { time: 13, subjectName: "프론트엔드 개발" },
-    ],
-  },
-  N312: {
-    room: "N312",
-    classes: [
-      { time: 11, subjectName: "기계학습" },
-      { time: 15, subjectName: "알고리즘" },
-    ],
-  },
-  N319: {
-    room: "N319",
-    classes: [
-      { time: 10, subjectName: "운영체제" },
-      { time: 14, subjectName: "데이터 분석" },
-    ],
-  },
-  N307: {
-    room: "N307",
-    classes: [
-      { time: 9, subjectName: "모바일 프로그래밍" },
-      { time: 12, subjectName: "컴퓨터 비전" },
-    ],
-  },
-  N314: {
-    room: "N314",
-    classes: [
-      { time: 11, subjectName: "프론트엔드 개발" },
-      { time: 16, subjectName: "데이터베이스" },
-    ],
-  },
-  N309: {
-    room: "N309",
-    classes: [
-      { time: 10, subjectName: "백엔드 개발" },
-      { time: 15, subjectName: "클라우드 컴퓨팅" },
-    ],
-  },
-  N317: {
-    room: "N317",
-    classes: [
-      { time: 9, subjectName: "컴퓨터 네트워크" },
-      { time: 13, subjectName: "자료구조" },
-    ],
-  },
-  N318: {
-    room: "N318",
-    classes: [
-      { time: 12, subjectName: "알고리즘" },
-      { time: 14, subjectName: "기계학습" },
-    ],
-  },
-};
-
 const BA2 = () => {
-  const [selectedRoom, setSelectedRoom] = useState(null);
+  const [selectedRoom, setSelectedRoom] = useState(null); // Data for the selected room
+  const [highlightedRooms, setHighlightedRooms] = useState([]); // Highlighted rooms list
 
-  const handleRoomClick = (room) => {
+  // Fetch highlighted rooms when the component loads
+  useEffect(() => {
+    const fetchHighlightedRooms = async () => {
+      try {
+        const response = await axiosInstance.post("/api/classroom", {
+          buildingName: 'BA', // Building name
+          floor: 2,           // Floor level
+          day: '월',          // Example day (adjust as needed)
+          hour: 13,           // Example hour (adjust as needed)
+        });
+        console.log(response);
+        setHighlightedRooms(response.data.classrooms);
+      } catch (error) {
+        console.error("Error fetching highlighted rooms:", error);
+      }
+    };
+
+    fetchHighlightedRooms();
+  }, []);
+
+  // Fetch the schedule when a room is clicked
+  const handleRoomClick = async (room) => {
     if (room !== "상담실") {
-      // 상담실 클릭 시 아무 동작 안 함
-      setSelectedRoom(mockScheduleData[room]);
+      try {
+        const response = await axiosInstance.post("/api/roomSchedule", {
+          buildingName: 'BA',
+          classroomNumber: room.substring(2), // Extract the numeric part after 'BA'
+          day: '월',                          // Example day
+          hour: 13,                           // Example hour
+        });
+        setSelectedRoom(response.data); // Store the fetched schedule in state
+      } catch (error) {
+        console.error("Error fetching room schedule:", error);
+      }
     }
   };
 
@@ -97,20 +55,32 @@ const BA2 = () => {
       <Navbar title="빈강의실" />
 
       <div className="ba2_container">
-        <div className="border-marker marker-blue marker-center-right"></div>
-        <div className="border-marker marker-maria marker-top-right-maria">마리아관</div>
-        {/* N301 부분 */}
-        <div className="room-box-max" onClick={() => handleRoomClick("N301")}>
-          <div className="room-box-content">N301</div>
+        <div className="border-marker marker-blue marker-bottom-right"></div>
+
+        {/* BA203 Room */}
+        <div
+          className={`room-box-max ${highlightedRooms.includes(parseInt("203")) ? "room-box-highlight" : ""}`}
+          onClick={() => handleRoomClick("BA203")}
+        >
+          <div className="room-box-content">BA203</div>
         </div>
+
+        <div style={{ marginBottom: "50px" }}></div>
+
         <div className="flex-container">
-          <div className="room-column room-column-left">
-            <div className="room-box-max-left" onClick={() => handleRoomClick("N301")}>
-              <div className="room-box-content">N301</div>
+          {/* BA202 Room */}
+          <div className="room-box-max-left" onClick={() => handleRoomClick("BA202")}>
+            <div
+              className="room-box-content"
+              style={{
+                transform: "rotate(-90deg)",
+              }}
+            >
+              BA202
             </div>
           </div>
 
-          {/* 중앙 텍스트 */}
+          {/* Centered text */}
           <div className="centered3-text">
             <span>밤</span>
             <span>비</span>
@@ -119,16 +89,24 @@ const BA2 = () => {
             <span>층</span>
           </div>
 
-          <div className="room-column room-column-right">
-            <div className="room-box-max-highlight" onClick={() => handleRoomClick("N301")}>
-              <div className="room-box-content ">N301</div>
+          {/* BA204 Room */}
+          <div
+            className={`room-box-max-right ${highlightedRooms.includes(parseInt("204")) ? "room-box-highlight" : ""}`}
+            onClick={() => handleRoomClick("BA204")}
+          >
+            <div
+              className="room-box-content"
+              style={{
+                transform: "rotate(90deg)",
+              }}
+            >
+              BA204
             </div>
           </div>
-        </div>{" "}
-        {/* n1_container 닫힘 */}
+        </div>
       </div>
 
-      {/* 입출구 및 계단 표시 */}
+      {/* Labels for exit and stairs */}
       <div className="label-container">
         <div className="label label-exit"></div>
         <span className="label-text">입출구</span>
