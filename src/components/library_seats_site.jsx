@@ -1,9 +1,8 @@
 import "./../css/components/library_seats_site.css";
 import { Topbar } from "../components/topbar";
-import { useNavigate } from "react-router-dom";
 
-export default function LibrarySeats({ name, imageUrl }) {
-  // const imageUrl = "https://example.com/image.jpg"; // 사용할 이미지 URL
+export default function LibrarySeats({ name }) {
+  const imageUrl = "https://example.com/image.jpg"; // 사용할 이미지 URL
 
   return (
     <div className="library-site">

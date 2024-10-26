@@ -1,6 +1,5 @@
-// import { useState, useEffect } from "react";
-// import axios from "axios";
-// import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
 import library1A from "/assets/library1A.svg";
 import library1B from "/assets/library1B.svg";
@@ -29,9 +28,10 @@ export default function Library() {
   //     setLoading(true);
   //     try {
   //       const response = await axios.get("http://3.35.114.206/api/study-seat");
+  //       console.log(response);
   //       setSeats(response.data.seats);
-  //     } catch (e) {
-  //       console.log(e);
+  //     } catch (error) {
+  //       console.log(error);
   //     }
   //     setLoading(false);
   //   };
