@@ -8,14 +8,14 @@ import "../css/pages/room.css";
 import Stair from "../components/Stair";
 
 const Room = () => {
-  const categories = [ "니콜스관", "다솔관", "밤비노관", "마리아관","비루투스"];
+  const categories = [ "니콜스관", "다솔관", "밤비노관", "마리아관","비루투스관"];
   const navigate = useNavigate(); // useNavigate hook 사용
   // 건물별 층수를 저장한 객체
   const floorsMapping = {
     
     니콜스관: 4,
     다솔관: 4,
-    비루투스:3,
+    비루투스관:3,
     밤비노관: 2,
     마리아관: 4,
   };

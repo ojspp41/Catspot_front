@@ -8,7 +8,7 @@ import "../css/pages/room.css";
 import Stair from "../components/Stair";
 
 const Rooma = () => {
-  const categories = ["니콜스관", "다솔관", "밤비노관", "마리아관", "비루투스"];
+  const categories = ["니콜스관", "다솔관", "밤비노관", "마리아관", "비루투스관"];
   const navigate = useNavigate();
 
   // Define the number of floors per building
