@@ -4,7 +4,7 @@ import Mainpage from "./pages/mainpage.jsx";
 import Library from "./pages/library.jsx";
 import "./App.css";
 import Rooma from "./pages/ROOMA.jsx";
-import Room from "./pages/room.jsx";
+import Room from "./pages/Room.jsx";
 import N1 from "./pages/n1.jsx";
 import N2 from "./pages/n2.jsx";
 import N3 from "./pages/n3.jsx";
