@@ -15,7 +15,7 @@ const Rooma = () => {
   const floorsMapping = {
     니콜스관: 4,
     다솔관: 4,
-    비루투스: 3,
+    비루투스관: 3,
     밤비노관: 2,
     마리아관: 4,
   };
@@ -37,11 +37,9 @@ const Rooma = () => {
     }
   };
 
-  const [currentIndex, setCurrentIndex] = useState(1);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [currentBuilding, setCurrentBuilding] = useRecoilState(currentBuildingState);
   const [currentFloor] = useRecoilState(currentFloorState);
-  const [offsetY, setOffsetY] = useState(0);
-  const [isSwiping, setIsSwiping] = useState(false);
 
   // Determine the selected building's floors
   const currentCategory = categories[currentIndex];
@@ -57,32 +55,6 @@ const Rooma = () => {
     }
   }, [alertShown]);
 
-  let touchStartY = 0;
-
-  const handleTouchStart = (e) => {
-    touchStartY = e.changedTouches[0].clientY;
-    setIsSwiping(true);
-  };
-
-  const handleTouchMove = (e) => {
-    const touchMoveY = e.changedTouches[0].clientY;
-    let deltaY = touchMoveY - touchStartY;
-    deltaY = Math.max(-30, Math.min(30, deltaY));
-    setOffsetY(deltaY);
-  };
-
-  const handleTouchEnd = (e) => {
-    const touchEndY = e.changedTouches[0].clientY;
-    setIsSwiping(false);
-
-    if (touchStartY - touchEndY > 50) {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % categories.length);
-    } else if (touchEndY - touchStartY > 50) {
-      setCurrentIndex((prevIndex) => (prevIndex - 1 + categories.length) % categories.length);
-    }
-    setOffsetY(0);
-  };
-
   const handleCategoryClick = (index) => {
     setCurrentIndex(index);
   };
@@ -97,13 +69,8 @@ const Rooma = () => {
   return (
     <>
       <Navbar title="빈강의실" />
-      <div
-        className="room-centered-box"
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
-      >
-        <div className="room-category" style={{ transform: `translateY(${offsetY}px)` }}>
+      <div className="room-centered-box">
+        <div className="room-category">
           <p
             className="room-faded-text"
             onClick={() => handleCategoryClick((currentIndex + categories.length - 1) % categories.length)}
@@ -114,10 +81,6 @@ const Rooma = () => {
           <p
             className="room-centered-text"
             onClick={() => handleCategoryClick(currentIndex)}
-            style={{
-              transform: `translateY(${offsetY}px)`,
-              transition: isSwiping ? "none" : "transform 0.3s ease",
-            }}
           >
             {currentCategory}
           </p>
