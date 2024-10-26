@@ -34,13 +34,17 @@ function App() {
             {/* Room routes */}
             <Route path="/room" element={<Room />} />
             <Route path="/room/n1/:roomId" element={<N1 />} />
+
             <Route path="/room/n2/:roomId" element={<N2 />} />
             <Route path="/room/n3/:roomId" element={<N3 />} />
             <Route path="/room/n4/:roomId" element={<N4 />} />
+            <Route path="/room/d1/:roomId" element={<Room/>} />
             <Route path="/room/d2/:roomId" element={<D2 />} />
             <Route path="/room/d3/:roomId" element={<D3 />} />
             <Route path="/room/d4/:roomId" element={<D4 />} />
+            <Route path="/room/ba1/:roomId" element={<Room />} />
             <Route path="/room/ba2/:roomId" element={<BA2 />} />
+            <Route path="/room/m1/:roomId" element={<Room />} />
             <Route path="/room/m2/:roomId" element={<M2 />} />
             <Route path="/room/m3/:roomId" element={<M3 />} />
             <Route path="/room/m4/:roomId" element={<M4 />} />

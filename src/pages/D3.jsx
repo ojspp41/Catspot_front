@@ -59,7 +59,7 @@ const D3 = () => {
         <div className="room-column room-column-left">
           <RoomBox
             text="D304"
-            className="room-box-highlight"
+            
             onClick={() => handleRoomClick("D304")}
             className={highlightedRooms.includes(parseInt("304")) ? "room-box-highlight" : ""}
           />
@@ -75,7 +75,7 @@ const D3 = () => {
           />
           <RoomBox
             text="D340"
-            className="room-box-highlight"
+            
             onClick={() => handleRoomClick("D340")}
             className={highlightedRooms.includes(parseInt("340")) ? "room-box-highlight" : ""}
           />
@@ -104,7 +104,7 @@ const D3 = () => {
           />
           <RoomBox
             text="D304"
-            className="room-box-highlight"
+            
             onClick={() => handleRoomClick("D304")}
             className={highlightedRooms.includes(parseInt("304")) ? "room-box-highlight" : ""}
           />
@@ -115,7 +115,7 @@ const D3 = () => {
           />
           <RoomBox
             text="D301"
-            className="room-box-highlight"
+            
             onClick={() => handleRoomClick("D301")}
             className={highlightedRooms.includes(parseInt("301")) ? "room-box-highlight" : ""}
           />
