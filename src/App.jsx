@@ -31,7 +31,7 @@ function App() {
           <Routes>
             {/* Mainpage and Library routes */}
             <Route path="/" element={<Mainpage />} />
-            <Route path="/Library" element={<Library />} />
+            <Route path="/library" element={<Library />} />
 
             {/* Room routes */}
             <Route path="/room" element={<Room />} />

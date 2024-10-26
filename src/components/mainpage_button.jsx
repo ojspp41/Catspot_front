@@ -5,7 +5,7 @@ export default function MainButton() {
   const navigate = useNavigate();
 
   const LibraryButton = () => {
-    navigate("/Library");
+    navigate("/library");
   };
 
   const ClassroomButton = () => {
