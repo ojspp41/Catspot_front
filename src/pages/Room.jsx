@@ -4,7 +4,7 @@ import { currentBuildingState, currentFloorState } from "../Atom.jsx";
 import axiosInstance from "../axiosConfig.jsx"; // Axios 인스턴스 가져오기
 import { Navba } from "../components/Navba";
 import { useNavigate } from "react-router-dom"; // useNavigate import
-import "../css/pages/room.css";
+import "../css/pages/Room.css";
 import Stair from "../components/Stair";
 
 const Room = () => {
