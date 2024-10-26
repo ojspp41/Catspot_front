@@ -23,6 +23,8 @@ export default function Library() {
       try {
         const response = await axiosInstance.get('/api/study-seat');
         console.log(response);
+        response.data.data = response.data.data.filter(item => item.placeName !== "대학원 열람석");
+
         setSeats(response.data.data);
       } catch (error) {
         console.error("Error fetching seats data:", error);
