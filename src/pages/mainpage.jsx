@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Character from "./../components/character.jsx";
 import MainButton from "./../components/mainpage_button.jsx";
-import QAModal from "../components/Qamodal.jsx";
+import QAModal from "../components/QAModal.jsx";
 import "./../css/pages/mainpage.css";
 
 export default function MainPage() {
