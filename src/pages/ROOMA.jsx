@@ -70,27 +70,38 @@ const Rooma = () => {
     <>
       <Navbar title="빈강의실" />
       <div className="room-centered-box">
-        <div className="room-category">
+      <div className="room-category">
+          <img
+              src="/assets/up.svg"
+              alt="Up Arrow"
+              className="arrow-icon"
+              onClick={() => handleCategoryClick((currentIndex + categories.length - 1) % categories.length)}
+          />
+
           <p
-            className="room-faded-text"
-            onClick={() => handleCategoryClick((currentIndex + categories.length - 1) % categories.length)}
+              className="room-faded-text"
+              
           >
-            {categories[(currentIndex + categories.length - 1) % categories.length]}
+              {categories[(currentIndex + categories.length - 1) % categories.length]}
+          </p>
+
+          <p className="room-centered-text" >
+              {currentCategory}
           </p>
 
           <p
-            className="room-centered-text"
-            onClick={() => handleCategoryClick(currentIndex)}
+              className="room-faded-text"
+              onClick={() => handleCategoryClick((currentIndex + 1) % categories.length)}
           >
-            {currentCategory}
+              {categories[(currentIndex + 1) % categories.length]}
           </p>
 
-          <p
-            className="room-faded-text"
-            onClick={() => handleCategoryClick((currentIndex + 1) % categories.length)}
-          >
-            {categories[(currentIndex + 1) % categories.length]}
-          </p>
+          <img
+              src="/assets/down.svg"
+              alt="Down Arrow"
+              className="arrow-icon"
+              onClick={() => handleCategoryClick((currentIndex + 1) % categories.length)}
+          />
         </div>
       </div>
 
