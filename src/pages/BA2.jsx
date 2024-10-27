@@ -22,7 +22,7 @@ const BA2 = () => {
           day,          // Example day (adjust as needed)
           hour,           // Example hour (adjust as needed)
         });
-        console.log(response);
+        
         setHighlightedRooms(response.data.classrooms);
       } catch (error) {
         console.error("Error fetching highlighted rooms:", error);

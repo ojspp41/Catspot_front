@@ -30,9 +30,9 @@ const N1 = () => {
           day,
           hour,
         });
-        console.log(response);
+        
         setHighlightedRooms(response.data.classrooms);
-        console.log(highlightedRooms);
+       
       } catch (error) {
         console.error("Error fetching highlighted rooms:", error);
       }
@@ -58,12 +58,7 @@ const handleRoomClick = async (room) => {
   }
 };
 
-// selectedRoom이 업데이트될 때마다 값을 콘솔에 출력
-useEffect(() => {
-if (selectedRoom) {
-  console.log(selectedRoom);
-}
-}, [selectedRoom]);
+
 
   const closeModal = () => {
     setSelectedRoom(null);

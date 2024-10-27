@@ -5,6 +5,7 @@
     align-items: flex-end; /* Aligns steps to bottom */
     width: 100%;
     height: 252px;
+    padding: 0px 25px;
   }
   
   .stair-step {
