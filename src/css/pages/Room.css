@@ -1,13 +1,13 @@
 .room-centered-box {
-    margin-top: 140px;
+    margin-top: 120px;
     width: 80%;
-    height: 141px;
+    height: 161px;
     background-color: rgba(185, 191, 227, 0.32); /* Slightly transparent background color */
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* Even spacing between the items */
     align-items: center;
-    padding: 17px;
+    padding: 3px 20px;
     margin-left: auto;
     margin-right: auto;
     border-radius: 15px; /* Increased border radius for smoother corners */
@@ -31,19 +31,29 @@
 }
 
 .room-faded-text {
-    font-size: 22px; /* Font size for the top and bottom text */
-    color: rgba(24, 41, 129, 0.5); /* Faded text color */
+    font-size: 18px; /* Font size for the top and bottom text */
+    color: rgba(24, 41, 129, 0.7); /* Faded text color */
     font-family: 'Abel', sans-serif; /* Abel font for faded text */
-    font-weight: 400;
+    font-weight: 600;
     text-align: center;
+    opacity: 0.4;
+    
+
 }
 
 .room-centered-text {
-    font-size: 31px; /* Larger font size for center text */
-    color: #182981; /* Dark blue color */
-    font-family: 'Abel', sans-serif; /* Abel font for centered text */
-    font-weight: bold; /* Make the center text bold */
-    text-align: center;
+  font-size: 29px; /* 중심 텍스트의 큰 폰트 크기 */
+  font-family: 'Abel', sans-serif; /* Abel 폰트 사용 */
+  font-weight: bold;
+  text-align: center;
+  
+  /* 그라데이션 적용 */
+  background: linear-gradient(145deg, #405394, #182981); /* 밝은 파란색에서 진한 파란색으로 그라데이션 */
+  -webkit-background-clip: text; /* 텍스트에만 그라데이션 적용 */
+  -webkit-text-fill-color: transparent; /* 텍스트 내부를 투명하게 */
+  
+  /* 입체감 추가 */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* 어두운 그림자 효과 */
 }
   .room-category p {
     transition: transform 0.5s ease, opacity 0.5s ease;
@@ -57,13 +67,29 @@
   .room-button {
     width: 80%;
     height: 60px;
-    background-color: #182981;
+    background: linear-gradient(145deg, #aabaf0, #182981); /* 색상 그라데이션 */
     color: white;
-    font-size: 18px;
+    font-size: 28px;
     font-weight: bold;
     border: none;
     border-radius: 15px;
     cursor: pointer;
     text-align: center;
-  }
-  
+
+    /* 입체감 추가 */
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3), /* 아래쪽 그림자 */
+                -4px -4px 8px rgba(255, 255, 255, 0.1); /* 위쪽 강조 */
+    transition: transform 0.2s ease; /* 클릭 시 애니메이션 */
+}
+
+/* 클릭 시 버튼을 누른 것 같은 효과 */
+.room-button:active {
+    transform: translateY(2px); /* 버튼이 살짝 눌리는 효과 */
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2), /* 아래쪽 그림자 감소 */
+                -2px -2px 4px rgba(255, 255, 255, 0.1); /* 위쪽 강조 감소 */
+}
+
+.arrow-icon {
+  width: 34px;
+  height: 34px;
+}

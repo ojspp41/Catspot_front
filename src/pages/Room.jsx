@@ -66,27 +66,38 @@ const Room = () => {
     <>
       <Navba title="빈강의실" />
       <div className="room-centered-box">
-        <div className="room-category">
-          <p
-            className="room-faded-text"
+      <div className="room-category">
+        <img
+            src="/assets/up.svg"
+            alt="Up Arrow"
+            className="arrow-icon"
             onClick={() => handleCategoryClick((currentIndex + categories.length - 1) % categories.length)}
-          >
+        />
+
+        <p
+            className="room-faded-text"
+            
+        >
             {categories[(currentIndex + categories.length - 1) % categories.length]}
-          </p>
+        </p>
 
-          <p
-            className="room-centered-text"
-            onClick={() => handleCategoryClick(currentIndex)}
-          >
+        <p className="room-centered-text" >
             {currentCategory}
-          </p>
+        </p>
 
-          <p
+        <p
             className="room-faded-text"
             onClick={() => handleCategoryClick((currentIndex + 1) % categories.length)}
-          >
+        >
             {categories[(currentIndex + 1) % categories.length]}
-          </p>
+        </p>
+
+        <img
+            src="/assets/down.svg"
+            alt="Down Arrow"
+            className="arrow-icon"
+            onClick={() => handleCategoryClick((currentIndex + 1) % categories.length)}
+        />
         </div>
       </div>
 

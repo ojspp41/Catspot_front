@@ -20,7 +20,11 @@
     text-align: center;
     border-radius: 5px;
     position: relative;
-  }
+
+    /* 입체감 추가 */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5); /* 그림자 추가 */
+    background: linear-gradient(145deg, #47578d, #182981); /* 색상 그라데이션 */
+}
   .step-decorator {
     position: absolute;
     top: -5px; /* 계단 아래쪽에 위치 */

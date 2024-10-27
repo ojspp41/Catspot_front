@@ -21,7 +21,7 @@ export default function Library() {
       setLoading(true);
       try {
         // 실제 API에서 데이터 가져오기
-        const response = await axiosInstance.get("http://3.35.114.206/api/study-seat");
+        const response = await axiosInstance.get("/api/study-seat");
         
         // 응답에서 필요한 데이터 추출
         const filteredData = response.data.data.filter(item => item.placeName !== "대학원 열람석");
