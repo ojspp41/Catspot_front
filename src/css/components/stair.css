@@ -1,5 +1,5 @@
 .stair-container {
-    margin-top: 100px;
+    margin-top: 70px;
     display: flex;
     flex-direction: row; /* Steps will be aligned in a row */
     align-items: flex-end; /* Aligns steps to bottom */

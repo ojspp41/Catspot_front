@@ -61,12 +61,12 @@
   .room-button-container {
     display: flex;
     justify-content: center;
-    margin-top: 91px;
+    margin-top: 45px;
   }
   
   .room-button {
     width: 80%;
-    height: 60px;
+    height:55px;
     background: linear-gradient(145deg, #aabaf0, #182981); /* 색상 그라데이션 */
     color: white;
     font-size: 28px;
