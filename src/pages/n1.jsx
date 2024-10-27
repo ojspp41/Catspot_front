@@ -5,7 +5,7 @@ import "../css/pages/n1.css";
 import RoomBox from '../components/RoomBox';
 import ScheduleModal from '../components/ScheduleModal';
 import axiosInstance from '../axiosConfig';
-
+import { getKoreanDayAndHour } from '../utils/dateUtils';
 const N1 = () => {
   const [selectedRoom, setSelectedRoom] = useState(null); // 선택된 강의실의 데이터
   const [highlightedRooms, setHighlightedRooms] = useState([]); // 하이라이트된 강의실 목록
@@ -17,6 +17,7 @@ const N1 = () => {
 
   // 페이지가 로드될 때 하이라이트된 강의실 목록 가져오기
   useEffect(() => {
+    const { day, hour } = getKoreanDayAndHour()
     const fetchHighlightedRooms = async () => {
       const dayNames = ["일", "월", "화", "수", "목", "금", "토"];
       const currentDate = new Date();
@@ -26,8 +27,8 @@ const N1 = () => {
         const response = await axiosInstance.post("/api/classroom", {
           buildingName,
           floor,
-          day: '월',
-          hour: 13,
+          day,
+          hour,
         });
         console.log(response);
         setHighlightedRooms(response.data.classrooms);
@@ -43,12 +44,13 @@ const N1 = () => {
   // 강의실을 클릭할 때 시간표 가져오기
   
 const handleRoomClick = async (room) => {
+  const { day, hour } = getKoreanDayAndHour()
   try {
     const response = await axiosInstance.post("/api/roomSchedule", {
       buildingName,
       classroomNumber: room.substring(1), // room에서 숫자 부분만 추출
-      day: '월',
-      hour: 13,
+      day,
+      hour,
     });
     setSelectedRoom(response.data); // 받아온 데이터를 selectedRoom에 저장
   } catch (error) {

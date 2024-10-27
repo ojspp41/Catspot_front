@@ -27,26 +27,7 @@
     margin-top: 20px;
   }
 
-  .room-box-max-left::before {
-    left: 30px; /* 왼쪽 삼각형 */
-  }
-
-  .room-box-max-left::after {
-    right: 30px; /* 오른쪽 삼각형 */
-  }
-
-  .room-box-max-left::before,
-  .room-box-max-left::after {
-    content: "";
-    position: absolute;
-
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 15px 15px 15px;
-    border-color: transparent transparent #b9bfe3 transparent; /* 기본 삼각형 색상 */
-    border-radius: 15px 15px 0 0; /* 삼각형을 둥글게 */
-  }
+ 
   .room-box-max-right {
     position: relative;
     width: 100%;
@@ -62,27 +43,7 @@
     margin-top: 20px;
   }
 
-  .room-box-max-right::before {
-    left: 30px; /* 왼쪽 삼각형 */
-  }
-
-  .room-box-max-right::after {
-    right: 30px; /* 오른쪽 삼각형 */
-  }
-
-  .room-box-max-right::before,
-  .room-box-max-right::after {
-    content: "";
-    position: absolute;
-    /* 삼각형 위치 설정 */
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 15px 15px 15px;
-    border-color: transparent transparent #b9bfe3  transparent; /* 기본 삼각형 색상 */
-    border-radius: 15px 15px 0 0; /* 삼각형을 둥글게 */
-  }
-
+ 
   .flex-container {
     height: 517px;
     justify-content: center;
@@ -107,14 +68,20 @@
     width: 80px;
   }
 }
-.room-box-highlight {
+.room-box-max-right.room-box-highlight {
+  background-color: #ffd700; /* 강조된 RoomBox 배경 색상 */
+}
+.room-box-max-left.room-box-highlight {
+  background-color: #ffd700; /* 강조된 RoomBox 배경 색상 */
+}
+.room-box-max_ba2.room-box-highlight {
   background-color: #ffd700; /* 강조된 RoomBox 배경 색상 */
 }
 .room-box-max_ba2{
   position: relative;
   width: 100%;
   height: 80px;
-  background-color: #ffd700; /* 기본 배경색 */
+  background-color: #b9bfe3; /* 기본 배경색 */
   border-radius: 15px; /* 둥근 모서리 */
   display: flex;
   justify-content: center;

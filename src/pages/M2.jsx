@@ -4,20 +4,21 @@ import RoomBox from "../components/RoomBox";
 import ScheduleModal from "../components/ScheduleModal";
 import axiosInstance from "../axiosConfig";
 import "../css/pages/m2.css";
-
+import { getKoreanDayAndHour } from "../utils/dateUtils";
 const M2 = () => {
   const [selectedRoom, setSelectedRoom] = useState(null); // Data for selected room
   const [highlightedRooms, setHighlightedRooms] = useState([]); // Highlighted room list
 
   // Fetch highlighted rooms on page load
   useEffect(() => {
+    const { day, hour } = getKoreanDayAndHour()
     const fetchHighlightedRooms = async () => {
       try {
         const response = await axiosInstance.post("/api/classroom", {
           buildingName: 'M', // Building name
           floor: 2,          // Floor level
-          day: '월',         // Example day, update as necessary
-          hour: 13,          // Example hour, update as necessary
+          day,         // Example day, update as necessary
+          hour,          // Example hour, update as necessary
         });
         setHighlightedRooms(response.data.classrooms);
       } catch (error) {
@@ -30,12 +31,13 @@ const M2 = () => {
 
   // Fetch room schedule when a room is clicked
   const handleRoomClick = async (room) => {
+    const { day, hour } = getKoreanDayAndHour()
     try {
       const response = await axiosInstance.post("/api/roomSchedule", {
         buildingName: 'M',
         classroomNumber: room.substring(1), // Extract the numeric part
-        day: '월',                           // Example day
-        hour: 13,                            // Example hour
+        day,                           // Example day
+        hour,                            // Example hour
       });
       setSelectedRoom(response.data); // Store fetched schedule in state
     } catch (error) {

@@ -4,20 +4,23 @@ import RoomBox from "../components/RoomBox";
 import ScheduleModal from "../components/ScheduleModal";
 import axiosInstance from "../axiosConfig";
 import "../css/pages/ba2.css";
-
+import { getKoreanDayAndHour } from "../utils/dateUtils";
 const BA2 = () => {
   const [selectedRoom, setSelectedRoom] = useState(null); // Data for the selected room
   const [highlightedRooms, setHighlightedRooms] = useState([]); // Highlighted rooms list
 
+  
+
   // Fetch highlighted rooms when the component loads
   useEffect(() => {
     const fetchHighlightedRooms = async () => {
+      const { day, hour } = getKoreanDayAndHour();
       try {
         const response = await axiosInstance.post("/api/classroom", {
           buildingName: 'BA', // Building name
           floor: 2,           // Floor level
-          day: '월',          // Example day (adjust as needed)
-          hour: 13,           // Example hour (adjust as needed)
+          day,          // Example day (adjust as needed)
+          hour,           // Example hour (adjust as needed)
         });
         console.log(response);
         setHighlightedRooms(response.data.classrooms);
@@ -32,12 +35,13 @@ const BA2 = () => {
   // Fetch the schedule when a room is clicked
   const handleRoomClick = async (room) => {
     if (room !== "상담실") {
+      const { day, hour } = getKoreanDayAndHour();
       try {
         const response = await axiosInstance.post("/api/roomSchedule", {
           buildingName: 'BA',
           classroomNumber: room.substring(2), // Extract the numeric part after 'BA'
-          day: '월',                          // Example day
-          hour: 13,                           // Example hour
+          day,                          // Example day
+          hour,                           // Example hour
         });
         setSelectedRoom(response.data); // Store the fetched schedule in state
       } catch (error) {
@@ -69,7 +73,7 @@ const BA2 = () => {
 
         <div className="flex-container">
           {/* BA202 Room */}
-          <div className="room-box-max-left" onClick={() => handleRoomClick("BA202")}>
+          <div className={`room-box-max-left ${highlightedRooms.includes(parseInt("202")) ? "room-box-highlight" : ""}`} onClick={() => handleRoomClick("BA202")}>
             <div
               className="room-box-content"
               style={{

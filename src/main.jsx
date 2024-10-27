@@ -5,7 +5,7 @@ import "./index.css";
 import "./fonts/font.css";
 
 createRoot(document.getElementById("root")).render(
-  <StrictMode>
+
     <App />
-  </StrictMode>
+
 );
