@@ -27,17 +27,23 @@
     padding: 20px;
     border-radius: 10px;
     width: 90%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    position: relative
+    box-shadow: 
+        0 4px 8px rgba(0, 0, 0, 0.5),   /* soft primary shadow */
+        0 8px 16px rgba(0, 0, 0, 0.5),  /* secondary layer for more depth */
+        0 12px 24px rgba(0, 0, 0, 0.3); /* tertiary layer for a deeper effect */
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s; /* smooth transition on hover */
 }
+
 .modal-content::before,
 .modal-content::after {
     content: "";
     position: absolute;
-    top: -30px; /* modal-content 상단에서의 위치 */
-    border-left: 30px solid transparent; /* 가로 크기 확장 */
-    border-right: 30px solid transparent; /* 가로 크기 확장 */
-    border-bottom: 40px solid white; /* 세로 크기 확장 */
+    top: -30px; /* Position above modal content */
+    border-left: 30px solid transparent; /* Width for left side */
+    border-right: 30px solid transparent; /* Width for right side */
+    border-bottom: 40px solid white; /* Color and height of the triangle */
+    filter: drop-shadow(0 0px 4px rgba(0, 0, 0, 0.1)); /* Shadow for 3D effect */
 }
 
 
@@ -58,17 +64,19 @@
 
 .schedule-table th,
 .schedule-table td {
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
+    border-top: 2px solid #ddd;
+    border-bottom: 2px solid #ddd;
     padding: 8px;
     text-align: center; /* Horizontally center text */
     vertical-align: middle; /* Vertically center text */
+    font-weight: 600; /* Increased font weight for bolder text */
+    font-size: 16px;
 }
 
 /* Add border between subject and time, but remove for leftmost and rightmost */
 .schedule-table th:not(:first-child),
 .schedule-table td:not(:first-child) {
-    border-left: 1px solid #ddd; /* Add border between columns */
+    border-left: 3px solid #ddd; /* Add border between columns */
 }
 
 .schedule-table th:first-child, 
@@ -91,20 +99,31 @@
 .close-button {
     margin-top: 40px;
     padding: 10px 20px;
-    background-color: #182981;
+    background: linear-gradient(135deg, #182981, #3a4da3); /* Gradient background */
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    width: 90%; /* 너비를 90%로 줄임 */
-    display: block; /* 블록 요소로 변경 */
-    margin-left: auto; /* 왼쪽 여백 자동 */
-    margin-right: auto; /* 오른쪽 여백 자동 */
-    font-weight:bold ;
+    width: 88%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bold;
     font-size: 17px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), /* Soft shadow */
+                0 6px 20px rgba(0, 0, 0, 0.15); /* Deeper shadow */
+    transition: transform 0.2s, box-shadow 0.2s; /* Smooth transition for hover effects */
+    font-size: 18px;
 }
-/* ScheduleModal.css */
+
+/* Hover effect for a lifted 3D effect */
+
+
+/* Active state for pressed effect */
+
+
+
+
 .current-time-slot td {
-    background-color: #b9bfe3; /* 현재 시간대의 배경색 */
-  }
-  
+    background: linear-gradient(135deg, #d6d9e8, #bac0e6); /* Soft, muted gradient */
+}

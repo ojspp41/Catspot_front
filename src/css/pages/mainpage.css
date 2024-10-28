@@ -7,7 +7,7 @@
 }
 
 .title {
-  font-size: 48px;
+  font-size: 38px;
   text-align: center;
   font-family: "title-font";
 }
@@ -15,8 +15,8 @@
 .sub-title {
   font-size: 15px;
   text-align: center;
-  margin-left: 120px;
-  padding-top: 100px;
+  margin-left: 100px;
+  padding-top: 90px;
   font-family: "LaundryGothic Regular";
 }
 

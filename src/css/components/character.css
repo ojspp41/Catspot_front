@@ -2,19 +2,19 @@
   .wifi1 {
     width: 80px;
     position: absolute;
-    top: 120px;
+    top: 90px;
   }
 
   .wifi2 {
     height: 100px;
     position: absolute;
-    top: 60px;
+    top: 30px;
   }
 
   .wifi3 {
     height: 80px;
     position: absolute;
-    top: 50px;
+    top: 20px;
     margin-left: 10px;
   }
 
@@ -25,9 +25,10 @@
   }
 
   .cat {
-    width: 400px;
-    height: 485px;
+    width: 350px;
+    height: 395px;
     margin-left: 20px;
+    mt
   }
 
   .cat-wrapper {

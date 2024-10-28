@@ -45,7 +45,7 @@ const handleSubmit = async () => {
 
   return (
     <div className="qa-modal-overlay">
-      <div className="qa-modal">
+      <div className="qa-modal onClick={(e) => e.stopPropagation()}">
         <img src="/assets/x.svg" alt="Close" className="close-icon" onClick={handleClose} />
         <h2>Q/A</h2>
         <input

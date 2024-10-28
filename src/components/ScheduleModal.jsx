@@ -14,7 +14,9 @@ const ScheduleModal = ({ schedule, onClose }) => {
 
   return (
     <div className="modal">
+
       <div className="modal-content">
+        
         <h2 className='room-name'>{schedule.className}</h2>
         <table className="schedule-table">
           <thead>
