@@ -173,3 +173,17 @@
   right: -38px;
   transform: rotate(90deg);
 }
+.helper-text {
+  color: rgba(128, 128, 128, 0.7); /* Light gray with reduced opacity */
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+.label-use {
+  background-color: #ffd700; /* Color for "입출구" */
+  
+}
+.label-margin{
+  margin-right: 10px;
+}

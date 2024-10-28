@@ -109,17 +109,19 @@ const BA2 = () => {
           </div>
         </div>
       </div>
+      <p className="helper-text">강의실을 클릭하여 시간표를 확인하세요!</p>
+      
 
       {/* Labels for exit and stairs */}
       <div className="label-container">
+        <div className="label label-use "></div>
+        <span className="label-text label-margin">사용중</span>
         <div className="label label-exit"></div>
         <span className="label-text">입출구</span>
         <div className="label label-stairs" style={{ marginLeft: "20px" }}></div>
         <span className="label-text">계단</span>
       </div>
-
-      <div style={{ marginBottom: "50px" }}></div>
-
+      
       {selectedRoom && <ScheduleModal schedule={selectedRoom} onClose={closeModal} />}
     </>
   );
