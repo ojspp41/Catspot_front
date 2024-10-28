@@ -13,9 +13,9 @@ const ScheduleModal = ({ schedule, onClose }) => {
   };
 
   return (
-    <div className="modal">
+    <div className="modal" onClick={onClose}>
 
-      <div className="modal-content">
+      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         
         <h2 className='room-name'>{schedule.className}</h2>
         <table className="schedule-table">
