@@ -4,8 +4,8 @@
   flex-flow: row nowrap;
   justify-content: center;
   gap: 27px;
-  padding-block-end: 95px;
-  margin-inline: 30px;
+  padding-block-end: 30px;
+  margin-inline: 20px;
 }
 
 .library-btn,
