@@ -3,7 +3,7 @@ import "../css/components/ScheduleModal.css";
 
 const ScheduleModal = ({ schedule, onClose }) => {
   
-  const timeSlots = [9, 10, 11, 12, 13, 14, 15, 16];
+  const timeSlots = [9, 10, 11, 12, 13, 14, 15, 16, 17];
   const currentHour = new Date().getHours();
   
   const getClassForTimeSlot = (timeSlot) => {
