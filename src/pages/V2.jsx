@@ -5,6 +5,7 @@ import ScheduleModal from "../components/ScheduleModal";
 import axiosInstance from "../axiosConfig";
 import "../css/pages/v2.css";
 import { getKoreanDayAndHour } from "../utils/dateUtils";
+import { useNavigate } from 'react-router-dom';
 const V2 = () => {
   const [selectedRoom, setSelectedRoom] = useState(null); // Data for selected room
   const [highlightedRooms, setHighlightedRooms] = useState([]); // Highlighted room list
@@ -48,12 +49,12 @@ const V2 = () => {
   const closeModal = () => {
     setSelectedRoom(null);
   };
-
+  const navigate = useNavigate();
   return (
     <>
       <Navbar title="빈강의실" />
       <div className="v1_container">
-        <div className="border-marker marker-nicols marker-bottom-center-nicols">니콜스관</div>
+        <div className="border-marker marker-nicols marker-bottom-center-nicols" onClick={() => navigate('/room/n2/n2')}>니콜스관</div>
         <div className="border-marker marker-red marker-center-right"></div>
 
         {/* Left column */}
