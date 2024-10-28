@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useRecoilState } from "recoil";
 import { currentBuildingState, currentFloorState } from "../Atom.jsx";
 import axiosInstance from "../axiosConfig.jsx";
@@ -11,7 +11,6 @@ const Room = () => {
   const categories = ["니콜스관", "다솔관", "밤비노관", "마리아관", "비루투스관"];
   const navigate = useNavigate();
 
-  // Building floor mapping
   const floorsMapping = {
     니콜스관: 4,
     다솔관: 4,
@@ -20,7 +19,6 @@ const Room = () => {
     마리아관: 4,
   };
 
-  // Utility function for building code
   const getBuildingCode = (building) => {
     switch (building) {
       case "김수환관":
@@ -42,12 +40,30 @@ const Room = () => {
     }
   };
 
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(
+    parseInt(localStorage.getItem("currentIndex")) || 0
+  );
   const [currentBuilding, setCurrentBuilding] = useRecoilState(currentBuildingState);
-  const [currentFloor] = useRecoilState(currentFloorState);
+  const [currentFloor, setCurrentFloor] = useRecoilState(currentFloorState);
+
+  useEffect(() => {
+    // 컴포넌트가 마운트될 때 저장된 building과 floor 불러오기
+    const savedIndex = parseInt(localStorage.getItem("currentIndex"));
+    const savedFloor = parseInt(localStorage.getItem("currentFloor"));
+
+    if (!isNaN(savedIndex)) setCurrentIndex(savedIndex);
+    if (!isNaN(savedFloor)) setCurrentFloor(savedFloor);
+  }, []);
+
+  useEffect(() => {
+    // currentIndex와 currentFloor가 변경될 때마다 localStorage에 저장
+    localStorage.setItem("currentIndex", currentIndex);
+    localStorage.setItem("currentFloor", currentFloor);
+  }, [currentIndex, currentFloor]);
 
   const handleCategoryClick = (index) => {
     setCurrentIndex(index);
+    setCurrentBuilding(categories[index]);
   };
 
   const handleGoClick = () => {
@@ -58,7 +74,6 @@ const Room = () => {
     navigate(roomPath);
   };
 
-  // Retrieve current category and total floors
   const currentCategory = categories[currentIndex];
   const totalFloors = floorsMapping[currentCategory];
 
@@ -66,38 +81,31 @@ const Room = () => {
     <>
       <Navba title="빈강의실" />
       <div className="room-centered-box">
-      <div className="room-category">
-        <img
+        <div className="room-category">
+          <img
             src="/assets/up.svg"
             alt="Up Arrow"
             className="arrow-icon"
             onClick={() => handleCategoryClick((currentIndex + categories.length - 1) % categories.length)}
-        />
-
-        <p
-            className="room-faded-text"
-            
-        >
+          />
+          <p className="room-faded-text">
             {categories[(currentIndex + categories.length - 1) % categories.length]}
-        </p>
-
-        <p className="room-centered-text" >
+          </p>
+          <p className="room-centered-text">
             {currentCategory}
-        </p>
-
-        <p
+          </p>
+          <p
             className="room-faded-text"
             onClick={() => handleCategoryClick((currentIndex + 1) % categories.length)}
-        >
+          >
             {categories[(currentIndex + 1) % categories.length]}
-        </p>
-
-        <img
+          </p>
+          <img
             src="/assets/down.svg"
             alt="Down Arrow"
             className="arrow-icon"
             onClick={() => handleCategoryClick((currentIndex + 1) % categories.length)}
-        />
+          />
         </div>
       </div>
 

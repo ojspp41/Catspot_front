@@ -57,8 +57,7 @@ const D2 = () => {
       <div className="d2_container">
         <div className="border-marker marker-blue marker-bottom-right"></div>
         <div className="border-marker marker-red marker-top-right"></div>
-        <div className="border-marker marker-red marker-bottom-right-center"></div>
-
+        
         {/* Left column */}
         <div className="room-column room-column-left">
           <RoomBox

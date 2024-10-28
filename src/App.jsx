@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Mainpage from "./pages/mainpage.jsx";
 import Library from "./pages/library.jsx";
 import "./App.css";
-import Rooma from "./pages/ROOMA.jsx";
 import Room from "./pages/Room.jsx";
 import OpenExternalBrowser from "./OpenExternalBrowser.jsx";
 import N1 from "./pages/n1.jsx";
@@ -20,7 +19,9 @@ import M4 from "./pages/M4.jsx";
 import V1 from "./pages/V1.jsx";
 import V2 from "./pages/V2.jsx";
 import V3 from "./pages/V3.jsx";
-
+import D1 from "./pages/D1.jsx";
+import BA1 from "./pages/BA1.jsx";
+import M1 from "./pages/M1.jsx";
 function App() {
   return (
     <RecoilRoot>
@@ -39,13 +40,13 @@ function App() {
             <Route path="/room/n2/:roomId" element={<N2 />} />
             <Route path="/room/n3/:roomId" element={<N3 />} />
             <Route path="/room/n4/:roomId" element={<N4 />} />
-            <Route path="/room/d1/:roomId" element={<Rooma />} />
+            <Route path="/room/d1/:roomId" element={<D1 />} />
             <Route path="/room/d2/:roomId" element={<D2 />} />
             <Route path="/room/d3/:roomId" element={<D3 />} />
             <Route path="/room/d4/:roomId" element={<D4 />} />
-            <Route path="/room/ba1/:roomId" element={<Rooma />} />
+            <Route path="/room/ba1/:roomId" element={<BA1 />} />
             <Route path="/room/ba2/:roomId" element={<BA2 />} />
-            <Route path="/room/m1/:roomId" element={<Rooma />} />
+            <Route path="/room/m1/:roomId" element={<M1 />} />
             <Route path="/room/m2/:roomId" element={<M2 />} />
             <Route path="/room/m3/:roomId" element={<M3 />} />
             <Route path="/room/m4/:roomId" element={<M4 />} />
