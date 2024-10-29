@@ -4,7 +4,7 @@
   flex-flow: row nowrap;
   justify-content: center;
   gap: 27px;
-  padding-block-end: 30px;
+  padding-block-end: 10px;
   margin-inline: 20px;
 }
 
@@ -19,8 +19,7 @@
   font-family: "LaundryGothic Bold";
   font-size: 18px;
   position: relative;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), /* soft shadow */
-              0 6px 20px rgba(0, 0, 0, 0.19); /* deeper shadow */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), /* soft shadow */ 0 6px 20px rgba(0, 0, 0, 0.19); /* deeper shadow */
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
@@ -28,14 +27,12 @@
 .library-btn:hover,
 .classroom-btn:hover {
   transform: translateY(-4px); /* slight lift */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25), /* lifted shadow */
-              0 8px 30px rgba(0, 0, 0, 0.22); /* deeper lifted shadow */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25), /* lifted shadow */ 0 8px 30px rgba(0, 0, 0, 0.22); /* deeper lifted shadow */
 }
 
 /* Active state for a pressed effect */
 .library-btn:active,
 .classroom-btn:active {
   transform: translateY(2px); /* push down slightly */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), /* compressed shadow */
-              0 4px 12px rgba(0, 0, 0, 0.18); /* reduced depth */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), /* compressed shadow */ 0 4px 12px rgba(0, 0, 0, 0.18); /* reduced depth */
 }

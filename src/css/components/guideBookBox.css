@@ -1,0 +1,32 @@
+.guidebook_box {
+  background-color: #eef0f8;
+  border-radius: 50px;
+  padding: 20px;
+  box-shadow: 0 0 5px 3px #d9def1;
+  display: flex;
+  gap: 10px;
+  margin-inline: 20px;
+}
+
+.guidebook_img {
+  width: 120px;
+  aspect-ratio: 1/2;
+}
+
+.guidebook_title {
+  margin-top: 20px;
+  font-family: "LaundryGothic Bold";
+  font-size: 18px;
+}
+
+.guidebook_content {
+  font-family: "LaundryGothic Regular";
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.explain {
+  display: flex;
+  flex-flow: column;
+  gap: 20px;
+}

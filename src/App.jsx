@@ -1,6 +1,7 @@
 import { RecoilRoot } from "recoil";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Mainpage from "./pages/mainpage.jsx";
+import GuideBook from "./pages/guidebook.jsx";
 import Library from "./pages/library.jsx";
 import "./App.css";
 import Room from "./pages/Room.jsx";
@@ -29,12 +30,12 @@ function App() {
     <RecoilRoot>
       <OpenExternalBrowser />
       <BrowserRouter>
-        
         <div className="App">
           <Routes>
             {/* Mainpage and Library routes */}
             <Route path="/" element={<Mainpage />} />
             <Route path="/library" element={<Library />} />
+            <Route path="/guidebook" element={<GuideBook />} />
 
             {/* Room routes */}
             <Route path="/room" element={<Room />} />
