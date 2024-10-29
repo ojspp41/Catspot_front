@@ -22,6 +22,8 @@ import V3 from "./pages/V3.jsx";
 import D1 from "./pages/D1.jsx";
 import BA1 from "./pages/BA1.jsx";
 import M1 from "./pages/M1.jsx";
+import D5 from "./pages/D5.jsx";
+import D6 from "./pages/D6.jsx";
 function App() {
   return (
     <RecoilRoot>
@@ -44,6 +46,9 @@ function App() {
             <Route path="/room/d2/:roomId" element={<D2 />} />
             <Route path="/room/d3/:roomId" element={<D3 />} />
             <Route path="/room/d4/:roomId" element={<D4 />} />
+            <Route path="/room/d5/:roomId" element={<D5 />} />
+            <Route path="/room/d6/:roomId" element={<D6 />} />
+
             <Route path="/room/ba1/:roomId" element={<BA1 />} />
             <Route path="/room/ba2/:roomId" element={<BA2 />} />
             <Route path="/room/m1/:roomId" element={<M1 />} />
