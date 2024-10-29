@@ -1,0 +1,27 @@
+.guidebook {
+  background-color: #182981;
+
+  .title-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    font-family: "LaundryGothic Regular";
+    color: #fff;
+  }
+
+  .title {
+    font-size: 40px;
+  }
+
+  .intro {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .guidebook-contents {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}

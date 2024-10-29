@@ -6,6 +6,15 @@
   position: relative; /* Set this to make .top-right-image positioned relative to .mainpage */
 }
 
+.guidebook_link {
+  margin-top: 10px;
+  text-align: center;
+  text-decoration: underline;
+  color: gray;
+  font-size: 16px;
+  font-family: "LaundryGothic Regular";
+}
+
 .title {
   font-size: 38px;
   text-align: center;

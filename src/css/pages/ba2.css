@@ -2,17 +2,16 @@
   position: relative;
   width: calc(100% - 40px);
   height: 643px;
-  margin: 90px auto 0 auto;
+  margin: 143px auto 0 auto;
   border: 3px solid #dfdfdf;
   border-radius: 5px;
   background-color: #ffffff;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* 왼쪽과 오른쪽으로 RoomBox를 배치 */
   padding: 20px 40px; /* 컨테이너 안에 여백 추가 */
 
-  .room-box-max-left {
+  .room-box-max_ba2 {
     position: relative;
     width: 100%;
     height: 80px;
@@ -27,12 +26,31 @@
     margin-top: 20px;
   }
 
- 
-  .room-box-max-right {
+  .room-box-max_ba2::before {
+    left: 30px; /* 왼쪽 삼각형 */
+  }
+
+  .room-box-max_ba2::after {
+    right: 30px; /* 오른쪽 삼각형 */
+  }
+  .room-box-max_ba2::before,
+  .room-box-max_ba2::after {
+    content: "";
+    position: absolute;
+    top: -12px; /* 삼각형 위치 설정 */
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 15px 15px 15px;
+    border-color: transparent transparent #b9bfe3 transparent; /* 기본 삼각형 색상 */
+    border-radius: 15px 15px 0 0; /* 삼각형을 둥글게 */
+  }
+
+  .room-box-max-left {
     position: relative;
-    width: 100%;
-    height: 80px;
-    background-color: #b9bfe3 ; /* 기본 배경색 */
+    width: 80px;
+    height: 300px;
+    background-color: #b9bfe3; /* 기본 배경색 */
     border-radius: 15px; /* 둥근 모서리 */
     display: flex;
     justify-content: center;
@@ -42,52 +60,67 @@
     color: black;
     margin-top: 20px;
   }
-
- 
-  .flex-container {
-    height: 517px;
-    justify-content: center;
-    gap: 30px;
+  .room-box-max-left::before {
+    transform: rotate(-90deg);
+    top: 240px;
+    left: -20px; /* 왼쪽 삼각형 */
   }
 
-  .room-box-max-left {
-    width: 271px;
-    height: 300px;
+  .room-box-max-left::after {
+    transform: rotate(-90deg);
+    top: 50px;
+    left: -20px; /* 오른쪽 삼각형 */
+  }
+  .room-box-max-left::before,
+  .room-box-max-left::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 15px 15px 15px;
+    border-color: transparent transparent #b9bfe3 transparent; /* 기본 삼각형 색상 */
+    border-radius: 15px 15px 0 0; /* 삼각형을 둥글게 */
   }
 
   .room-box-max-right {
-    width: 271px;
+    position: relative;
+    width: 80px;
     height: 300px;
+    background-color: #b9bfe3; /* 기본 배경색 */
+    border-radius: 15px; /* 둥근 모서리 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    margin-top: 20px;
+  }
+  .room-box-max-right::before {
+    transform: rotate(90deg);
+    top: 240px;
+    left: 70px; /* 왼쪽 삼각형 */
+  }
+
+  .room-box-max-right::after {
+    transform: rotate(90deg);
+    top: 50px;
+    left: 70px; /* 오른쪽 삼각형 */
+  }
+  .room-box-max-right::before,
+  .room-box-max-right::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 15px 15px 15px;
+    border-color: transparent transparent #b9bfe3 transparent; /* 기본 삼각형 색상 */
+    border-radius: 15px 15px 0 0; /* 삼각형을 둥글게 */
   }
 
   .centered3-text {
     margin-top: 0;
   }
-
-  .room-column {
-    width: 80px;
-  }
-}
-.room-box-max-right.room-box-highlight {
-  background-color: #ffd700; /* 강조된 RoomBox 배경 색상 */
-}
-.room-box-max-left.room-box-highlight {
-  background-color: #ffd700; /* 강조된 RoomBox 배경 색상 */
-}
-.room-box-max_ba2.room-box-highlight {
-  background-color: #ffd700; /* 강조된 RoomBox 배경 색상 */
-}
-.room-box-max_ba2{
-  position: relative;
-  width: 100%;
-  height: 80px;
-  background-color: #b9bfe3; /* 기본 배경색 */
-  border-radius: 15px; /* 둥근 모서리 */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 20px;
-  font-weight: bold;
-  color: black;
-  margin-top: 20px;
 }
