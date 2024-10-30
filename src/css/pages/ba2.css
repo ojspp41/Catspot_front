@@ -123,4 +123,14 @@
   .centered3-text {
     margin-top: 0;
   }
+  .room-box-highlight {
+  background-color: #ffd700 !important; /* Yellow highlight color */
+  }
+  .room-box-highlight::before,
+  .room-box-highlight::after {
+    border-color: transparent transparent #ffd700 transparent !important; /* 삼각형도 노란색으로 변경 */
+  }
+
+
+
 }
