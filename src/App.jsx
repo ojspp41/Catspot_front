@@ -25,6 +25,7 @@ import BA1 from "./pages/BA1.jsx";
 import M1 from "./pages/M1.jsx";
 import D5 from "./pages/D5.jsx";
 import D6 from "./pages/D6.jsx";
+import D7 from "./pages/D7.jsx";
 function App() {
   return (
     <RecoilRoot>
@@ -49,6 +50,7 @@ function App() {
             <Route path="/room/d4/:roomId" element={<D4 />} />
             <Route path="/room/d5/:roomId" element={<D5 />} />
             <Route path="/room/d6/:roomId" element={<D6 />} />
+            <Route path="/room/d7/:roomId" element={<D7 />} />
 
             <Route path="/room/ba1/:roomId" element={<BA1 />} />
             <Route path="/room/ba2/:roomId" element={<BA2 />} />
