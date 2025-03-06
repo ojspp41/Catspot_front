@@ -2,7 +2,7 @@
 
 ---
 
-# CAT-SPOT (수정중)
+# CAT-SPOT
 <p>
   <img width="800" alt="캣스팟" src="https://github.com/user-attachments/assets/d2654af1-db4c-4cc7-92b5-c9edb0d04952">
 </p>
